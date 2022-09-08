@@ -1,19 +1,32 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { Suspense } from "react";
+import { createRoot } from "react-dom/client";
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+import { BrowserRouter as Router } from "react-router-dom";
+import { Provider } from "react-redux";
+import { persistStore } from "redux-persist";
+import { PersistGate } from "redux-persist/integration/react";
+import SuspendLoading from "src/components/SuspenseLoading";
+
+import "./assets/scss/main.scss";
+import App from "./App";
+
+import store from "src/store";
+
+const container = document.getElementById("root");
+const root = createRoot(container!);
+
+let persistor = persistStore(store);
+
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  // <StrictMode>
+  <Suspense fallback={<SuspendLoading />}>
+    <Provider store={store}>
+      <PersistGate persistor={persistor}>
+        <Router basename={`/`}>
+          <App />
+        </Router>
+      </PersistGate>
+    </Provider>
+  </Suspense>
+  // </StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

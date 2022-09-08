@@ -1,0 +1,9 @@
+.footer__wrap {
+  margin-top: 2rem;
+  .footer__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem;
+  }
+}

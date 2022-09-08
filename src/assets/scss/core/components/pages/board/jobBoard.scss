@@ -1,0 +1,68 @@
+.jobboard__item {
+  padding-top: 2.3rem !important;
+  padding-left: 2rem !important;
+}
+
+.jobboard__itemContainer {
+  .jobboard__item__head {
+    display: flex;
+    justify-content: space-between;
+    .jobboard__item__headIcon {
+      display: inline-flex;
+      align-items: flex-start;
+      height: 30px;
+    }
+  }
+  .jobboard__item__content {
+    .jobboard__item__contentTitle {
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    .jobboard__item__contentCompany {
+      color: rgba(34, 51, 84, 0.7);
+      font-size: 0.9rem;
+    }
+    .jobboard__item__contentLocation {
+      color: rgba(34, 51, 84, 0.7);
+      font-size: 0.9rem;
+    }
+  }
+  .jobboard__item__tags {
+    padding: 1rem;
+    .jobboard__item__tagsLabel {
+      margin-right: 0.5rem;
+      padding: 9px;
+      .MuiChip-label {
+        font-weight: bold;
+      }
+    }
+  }
+  .jobboard__item__buttonGroup {
+    display: flex;
+    gap: 1rem;
+    .jobboard__item__button {
+      width: 90%;
+      border-radius: 1rem;
+      text-transform: none;
+    }
+    .jobboard__item__buttonFilled {
+      background-color: rgb(85, 105, 255);
+      color: white;
+    }
+    .jobboard__item__buttonOutline {
+      background-color: white;
+      border-color: rgb(85, 105, 255);
+      color: rgb(85, 105, 255);
+    }
+  }
+}
+
+.jobboard__sortbar__button {
+  border-radius: 1rem !important;
+  font-weight: bold !important;
+  background-color: transparent !important;
+  border: 1px solid rgb(85, 105, 255) !important;
+  box-shadow: none !important;
+  color: rgb(85, 105, 255) !important;
+  text-transform: none !important;
+}

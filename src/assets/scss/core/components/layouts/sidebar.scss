@@ -1,0 +1,226 @@
+.sideBar__container {
+  width: 290px;
+  min-width: 290px;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  color: rgba(255, 255, 255, 0.7);
+  z-index: 7;
+  height: 100%;
+  padding-bottom: 70px;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  background-color: rgb(17, 25, 42);
+  box-shadow: none;
+}
+
+@media (min-width: 0px) {
+  .sideBar__container {
+    display: none;
+  }
+}
+@media (min-width: 1280px) {
+  .sideBar__container {
+    display: inline-block;
+  }
+}
+@media (min-width: 0px) {
+  .sideBar__containerDrawer {
+    display: inline-block;
+  }
+}
+@media (min-width: 1280px) {
+  .sideBar__containerDrawer {
+    display: none;
+  }
+}
+
+.sideBar__mainSideBarWrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  .sideBar__mainSideBarContainer {
+    overflow: scroll;
+    position: absolute;
+    inset: 0px;
+    margin-right: -25px;
+    margin-bottom: -25px;
+    .sideBar__AvatarGroup__Container {
+      position: relative;
+      margin-right: 1rem;
+      margin-left: 1rem;
+      .sideBar__AvatarGroup {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 1rem;
+        .sideBar__AvatarGroup__mainAvatar {
+          width: 68px;
+          height: 68px;
+          margin-bottom: 0.5rem;
+        }
+        .sideBar__AvatarGroup__mainName {
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 1.235;
+          color: rgb(255, 255, 255);
+        }
+        .sideBar__AvatarGroup__subTitle {
+          font-size: 0.8rem;
+        }
+        .sideBar__AvatarGroup__IconButton {
+          color: rgba(255, 255, 255, 0.7);
+          background-color: rgba(255, 255, 255, 0.1);
+          border-radius: 8px;
+          display: inline-flex;
+          top: 0;
+          right: 0.5rem;
+          position: absolute;
+          padding: 1rem;
+          width: 15px !important;
+          height: 15px !important;
+          .MuiSvgIcon-root {
+            height: 1.2rem;
+            width: 1.2rem;
+          }
+        }
+        .sideBar__AccordionGroup__item {
+          padding-left: 5rem;
+          .sideBar__AccordionGroup__itemLink {
+            color: rgba(255, 255, 255, 0.7) !important;
+            text-decoration: none !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.sidebar__AvatarGroup__Popup {
+  .MuiPopover-paper {
+    border-radius: 10px;
+  }
+  .sidebar__AvatarGroup__PopupContainer {
+    display: flex;
+    flex-direction: row;
+    min-width: 210px;
+    max-width: 210px;
+    .sidebar__AvatarGroup__PopupAvatar {
+      border-radius: 10px;
+    }
+    .sidebar__AvatarGroup__PopupMainName {
+      color: rgb(110, 117, 159);
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+    .sidebar__AvatarGroup__PopupSubTitle {
+      color: rgb(146, 151, 183);
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.sidebar__AvatarGroup__customButtonList {
+  &.MuiList-root {
+    padding: 0.5rem;
+  }
+  .sidebar__AvatarGroup__customButton {
+    color: rgb(110, 117, 159);
+    border-radius: 6px !important;
+    margin: 1px 0px;
+    .MuiListItemIcon-root {
+      min-width: 2rem;
+      font-size: 0.2rem;
+    }
+    .MuiListItemText-root {
+      font-size: 0.2rem;
+    }
+
+    .sidebar__AvatarGroup_icon {
+      color: rgb(110, 117, 159);
+    }
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.04);
+      color: rgb(34, 51, 84);
+    }
+  }
+}
+
+.sidebar__AvatarGroup_logoutButton {
+  color: rgb(85, 105, 255) !important;
+  font-weight: bold !important;
+  text-transform: none !important;
+  padding: 1rem !important;
+  width: 100% !important;
+}
+
+.sideBar__divider {
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.sideBar__AccordionGroup__container {
+  .sideBar__AccordionGroup__component {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    .sideBar__AccordionGroup__ListSubheader {
+      background-color: transparent;
+      color: rgba(255, 255, 255, 0.5);
+      font-weight: bold;
+      font-size: 0.75rem;
+    }
+    .sideBar__AccordionGroup__accordion {
+      background-color: transparent;
+      color: rgba(255, 255, 255, 0.7);
+      margin-left: 1rem;
+      &::before {
+        display: none;
+        content: none !important;
+      }
+      .sideBar__AccordionGroup__icon {
+        color: rgba(255, 255, 255, 0.3);
+        margin-right: 0.5rem;
+        width: 0.9rem;
+        height: 0.9rem;
+        margin-bottom: 0.2rem;
+      }
+      .sideBar__AccordionGroup__title {
+        font-weight: bold;
+        font-size: 0.875rem;
+        line-height: 1.75;
+      }
+    }
+  }
+  &:hover &.sideBar__AccordionGroup__icon {
+    color: rgb(255, 255, 255);
+  }
+}
+
+.sideBar__AccordionGroup__accordionSummary {
+  background-color: rgba(255, 255, 255, 0.06);
+  border-radius: 1rem;
+}
+
+// Footer Button
+.sideBar__footerButton__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .sideBar__footerButton__container__iconButton {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    border-radius: 0.5rem;
+    margin-right: 0.5rem;
+    max-width: 36px;
+    max-height: 36px;
+    .sideBar__footerButton__container__iconButtonIcon {
+      width: 1.3rem;
+      height: 1.3rem;
+    }
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+      color: rgb(255, 255, 255);
+    }
+  }
+}

@@ -1,0 +1,60 @@
+.board__searchHeaderContainer {
+  display: flex;
+  align-items: center;
+
+  .board__searchIcon {
+    margin-left: 1rem;
+  }
+  .board__searchHeaderAutoCompleteContainer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex: 1 1 0%;
+    padding: 1.1rem;
+
+    .board__searchHeaderAutoComplete {
+      // flex-wrap: wrap;
+      width: 100%;
+      display: block;
+      .MuiChip-deleteIcon {
+        color: rgb(255, 94, 123) !important;
+      }
+      .MuiAutocomplete-clearIndicator {
+        color: rgb(255, 94, 123) !important;
+        background-color: rgba(255, 25, 67, 0.1);
+      }
+      .MuiFormControl-root {
+        .MuiInputLabel-root {
+          &.Mui-focused {
+            color: rgb(85, 105, 255);
+          }
+        }
+        .MuiInputBase-root {
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+}
+
+.board__searchHeaderDivider {
+  margin-left: 2rem;
+  border-width: 1px;
+}
+@media (min-width: 0px) {
+  .board__searchHeaderAutoCompleteContainer {
+    flex-direction: column;
+  }
+  .board__searchIcon {
+    display: none !important;
+  }
+}
+
+@media (min-width: 960px) {
+  .board__searchHeaderAutoCompleteContainer {
+    flex-direction: row;
+  }
+  .board__searchIcon {
+    display: block !important;
+  }
+}

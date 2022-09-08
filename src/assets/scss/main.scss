@@ -1,0 +1,15 @@
+@import "./variables.scss";
+@import "./reset.scss";
+@import "./global.scss";
+
+//Layout
+
+@import "./core/components/layouts";
+
+@import "./core/components/pages/index.scss";
+
+
+
+
+// Font
+@import "./core/components/fonts/index.scss";

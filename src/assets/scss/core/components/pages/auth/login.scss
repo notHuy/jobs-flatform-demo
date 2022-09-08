@@ -1,0 +1,56 @@
+.auth__login__container {
+  height: 100vh;
+  .auth__login__paperwall {
+    padding: 4rem;
+    .auth__login__paperwallContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+    }
+  }
+
+  .auth__login__login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .auth__login__loginCardContainer {
+      .auth__login__loginCard {
+        padding: 2rem;
+        .auth__login__loginCardTitle {
+          text-align: center;
+        }
+        .auth__login__loginCardForm {
+          width: 100%;
+
+          .auth__login__loginCardFormControl {
+            width: 100%;
+            margin-bottom: 1rem;
+            .auth__login__loginCardFormInput fieldset {
+              border-radius: 10px;
+            }
+            &:not(:first-child, :last-child) {
+              margin-top: 1rem;
+            }
+            .auth__login__loginBtn {
+              background-color: rgb(85, 105, 255);
+              color: white;
+              border-radius: 0.5rem;
+            }
+          }
+          .auth__login__checkboxGroup {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding-left: 0;
+            .auth__login__checkbox {
+              padding-left: 0;
+              cursor: pointer;
+              color: rgb(85, 105, 255);
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+.board__title__container {
+  .board__title__menuButton {
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    outline: 0px;
+    border: 0px;
+    margin: 0px;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    appearance: none;
+    text-decoration: none;
+    text-align: center;
+    flex: 0 0 auto;
+    overflow: visible;
+    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    color: rgb(85, 105, 255);
+    font-size: 1.125rem;
+    border-radius: 8px;
+    padding: 4px;
+    width: 54px;
+    height: 54px;
+    position: absolute;
+    background: rgb(255, 255, 255);
+    z-index: 5;
+    top: calc(116px);
+  }
+}
+
+.board__title__container__mainTitle {
+  color: rgb(34, 51, 84) !important;
+  font-weight: 700 !important;
+}
+
+@media screen and (min-width: 0px) {
+  .board__title__menuButton {
+    display: flex;
+  }
+  .board__title__searchBarDraw {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .board__title__menuButton {
+    display: none !important;
+  }
+  .board__title__searchBarDraw {
+    display: none !important;
+  }
+}
