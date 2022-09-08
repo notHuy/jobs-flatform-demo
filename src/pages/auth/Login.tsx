@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { styled } from "@mui/material/styles";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
 
 import {
@@ -12,7 +13,6 @@ import {
   Checkbox,
   TextField,
   Button,
-  InputLabel,
 } from "../../components/index";
 import { authSliceActions } from "src/slices/auth";
 
@@ -31,6 +31,16 @@ const defaultValues = {
 };
 
 const Login: React.FC = () => {
+  const FormControlWrapper = styled(FormControl)(
+    () => `
+    .MuiFormHelperText-root.Mui-error {
+        font-weight: bold;
+        color: rgb(255, 25, 67);
+      }
+    }
+  `
+  );
+
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const {
@@ -58,7 +68,7 @@ const Login: React.FC = () => {
             variant="h4"
             component="h4"
             mb={5}
-            sx={{ fontWeight: "bold" }}
+            className="auth__login__paperwallTitle"
           >
             Multiple auth <br /> methods included
           </Typography>
@@ -71,15 +81,18 @@ const Login: React.FC = () => {
             alt="imgLogin"
             src={imgLogin}
           />
-          <Typography mt={5} mb={5}>
+          <Typography mt={5} mb={5} className="auth__login__paperwallDes">
             Choose between JSON Web Token, Firebase, AWS Amplify or Auth0.
             Regular login/register functionality is also available. Want to
             switch auth methods?
           </Typography>
-          <Typography variant="h6">Want to switch auth methods?</Typography>
-          <Typography>
+          <Typography variant="h6" className="auth__login__paperwallQues">
+            Want to switch auth methods?
+          </Typography>
+          <Typography className="auth__login__paperwallDes">
             It only takes seconds. There is a documentation section showing how
-            to do exactly that. Read docs
+            to do exactly that.{" "}
+            <a href="https://tokyo.bloomui.com/docs/introduction">Read docs</a>
           </Typography>
         </Box>
       </Grid>
@@ -101,7 +114,11 @@ const Login: React.FC = () => {
               >
                 Sign in
               </Typography>
-              <Typography component="h6" mb={5}>
+              <Typography
+                component="h6"
+                mb={5}
+                className="auth__login__loginCardTitleDes"
+              >
                 Fill in the fields below to sign into your account.
               </Typography>
             </Box>
@@ -109,7 +126,7 @@ const Login: React.FC = () => {
               className="auth__login__loginCardForm"
               onSubmit={handleSubmit(onSubmit)}
             >
-              <FormControl className="auth__login__loginCardFormControl">
+              <FormControlWrapper className="auth__login__loginCardFormControl">
                 <Controller
                   rules={{
                     required: "This is field required",
@@ -134,8 +151,8 @@ const Login: React.FC = () => {
                     </>
                   )}
                 />
-              </FormControl>
-              <FormControl className="auth__login__loginCardFormControl">
+              </FormControlWrapper>
+              <FormControlWrapper className="auth__login__loginCardFormControl">
                 <Controller
                   rules={{
                     required: "This is field required",
@@ -152,13 +169,15 @@ const Login: React.FC = () => {
                         variant="outlined"
                         className="auth__login__loginCardFormInput"
                         error={errors.password ? true : false}
-                        helperText={errors.password && "This field is required"}
+                        helperText={
+                          errors.password && "The password field is required"
+                        }
                       />
                     </>
                   )}
                 />
-              </FormControl>
-              <FormControl className="auth__login__loginCardFormControl  ">
+              </FormControlWrapper>
+              <FormControlWrapper className="auth__login__loginCardFormControl  ">
                 <Box className="auth__login__checkboxGroup">
                   <Controller
                     rules={{
@@ -170,25 +189,35 @@ const Login: React.FC = () => {
                       <>
                         <Checkbox
                           {...field}
+                          checked={field.value}
                           className="auth__login__checkbox"
                           id="auth__login__checkbox"
                         />
                       </>
                     )}
                   />
-                  <label htmlFor="auth__login__checkbox">
-                    <Typography>I accept the terms and conditions.</Typography>
+                  <label
+                    htmlFor="auth__login__checkbox"
+                    className="auth__login__checkboxLabel"
+                  >
+                    <Typography>
+                      I accept the <a href="/"> terms and conditions</a>
+                    </Typography>
                   </label>
                 </Box>
                 {/* <Typography>Lost Password?</Typography> */}
                 {errors.termCheck && (
-                  <span style={{ color: "red" }}>
+                  <Typography className="checkBox-errorMessage">
                     {errors.termCheck.message}
-                  </span>
+                  </Typography>
                 )}
-              </FormControl>
+              </FormControlWrapper>
               <FormControl className="auth__login__loginCardFormControl ">
-                <Button variant="contained" type="submit" className="auth__login__loginBtn">
+                <Button
+                  variant="contained"
+                  type="submit"
+                  className="auth__login__loginBtn"
+                >
                   Sign in
                 </Button>
               </FormControl>
