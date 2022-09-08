@@ -3,6 +3,7 @@ import { styled } from "@mui/material/styles";
 import { keyframes } from "@mui/system";
 
 import Notification from "./Notification";
+import Message from "./Message";
 import Languages from "./Languages";
 import { Stack, Badge, IconButton, Tooltip, Avatar } from "src/components";
 import { NotificationsNoneIcon, ForumIcon } from "src/components/Icon";
@@ -24,42 +25,14 @@ const IconButtonsGroup = () => {
     },
   });
 
-  // const AnimatedBadge = styled(Badge)(
-  //   () => `
-  //     .MuiBadge-badge{
-  //       background: rgb(87, 202, 34);
-  //       animation: ${spin} 1s infinite ease;
-  //     }
-  // `
-  // );
-
-  //   const AnimatedBadge = styled(Badge)(
-  //     () => `
-  //     .MuiBadge-badge {
-  //         background-color: #44b700;
-  //         color: #44b700;
-
-  //         &::after {
-  //             position: absolute;
-  //             top: 0;
-  //             left: 0;
-  //             width: 100%;
-  //             height: 100%;
-  //             border-radius: 50%;
-  //             animation: ripple 1.2s infinite ease-in-out;
-  //             border: 1px solid currentColor;
-  //             content: "";
-  //         }
-  //     }
-  // `
-  //   );
-
   const [anchorElNoti, setAnchorElNoti] = useState<HTMLButtonElement | null>(
     null
   );
   const [anchorElLang, setAnchorElLang] = useState<HTMLButtonElement | null>(
     null
   );
+  const [anchorElMessage, setAnchorElMessage] =
+    useState<HTMLButtonElement | null>(null);
 
   // const [anchorElMegaMenu, setAnchorElMegaMenu] =
   //   useState<HTMLButtonElement | null>(null);
@@ -72,6 +45,9 @@ const IconButtonsGroup = () => {
   };
   const handleClickLang = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorElLang(event.currentTarget);
+  };
+  const handleClickMessage = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorElMessage(event.currentTarget);
   };
   // const handleClickMegaMenu = (event: React.MouseEvent<HTMLButtonElement>) => {
   //   setAnchorElMegaMenu(event.currentTarget);
@@ -86,6 +62,9 @@ const IconButtonsGroup = () => {
   const handleCloseLang = () => {
     setAnchorElLang(null);
   };
+  const handleCloseMessage = () => {
+    setAnchorElMessage(null);
+  };
   // const handleCloseMegaMenu = () => {
   //   setAnchorElMegaMenu(null);
   // };
@@ -95,6 +74,7 @@ const IconButtonsGroup = () => {
 
   const openNoti = Boolean(anchorElNoti);
   const openLang = Boolean(anchorElLang);
+  const openMessage = Boolean(anchorElMessage);
   // const openMegaMenu = Boolean(anchorElMegaMenu);
   // const openDashboard = Boolean(anchorElDashBoard);
 
@@ -127,24 +107,13 @@ const IconButtonsGroup = () => {
         handleClose={handleCloseLang}
         handleClickLang={handleClickLang}
       />
-      <Tooltip title="Messenger">
-        <IconButton
-          aria-label="delete"
-          size="medium"
-          className="header__iconGroup__iconButton header__iconGroup__iconButtonMessage"
-        >
-          <Badge
-            color="error"
-            variant="dot"
-            anchorOrigin={{
-              vertical: "bottom",
-              horizontal: "right",
-            }}
-          >
-            <ForumIcon fontSize="inherit" sx={{ fontSize: 20 }} />
-          </Badge>
-        </IconButton>
-      </Tooltip>
+      <Message
+        open={openMessage}
+        anchorEl={anchorElMessage}
+        id={id}
+        handleClose={handleCloseMessage}
+        handleClickMessage={handleClickMessage}
+      />
       <IconButton
         aria-label="header__iconGroup__avatar"
         size="medium"

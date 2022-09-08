@@ -522,3 +522,115 @@
     background-color: rgba(34, 51, 84, 0.1);
   }
 }
+
+//Message
+
+.header__iconGroup__message__container {
+  min-width: 360px;
+  max-width: 360px;
+  .header__iconGroup__message__headerContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.7rem;
+    background-color: rgba(34, 51, 84, 0.07);
+    .header__iconGroup__message__headerButton {
+      padding: 7px 12px;
+      color: rgb(85, 105, 255);
+      font-weight: bold;
+      border-radius: 10px;
+      font-size: 0.75rem;
+      line-height: 1.5;
+      .header__iconGroup__message__headerButtonIcon {
+        width: 17px;
+        height: 17px;
+        margin-right: 0.5rem;
+      }
+      &:hover {
+        background: rgba(85, 105, 255, 0.1);
+        text-decoration: none;
+      }
+    }
+  }
+  .header__iconGroup__message__searchContainer {
+    .header__iconGroup__message__searchFormControl {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      padding: 0.2rem 0rem;
+      .header__iconGroup__message__searchIcon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgba(0, 0, 0, 0.54);
+      }
+      .header__iconGroup__message__searchInputbase {
+        padding-top: 0.7rem;
+        padding-bottom: 0.5rem;
+        .MuiInputBase-input {
+          padding: 0;
+          &::placeholder {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+  .header__iconGroup__message__displayContainer {
+    padding: 0;
+    height: 200px;
+    .header__iconGroup__message__list {
+      padding: 0;
+      .header__iconGroup__message__listItem {
+        padding: 0.6rem 1rem;
+      }
+      .header__iconGroup__message__listItemTitle {
+        color: rgb(34, 51, 84);
+        font-weight: bold;
+        font-size: 0.9rem;
+      }
+      .header__iconGroup__message__listItemOnlineStatus {
+        color: rgb(87, 202, 34);
+        font-size: 0.75rem;
+        .header__iconGroup__message__listItemOnlineStatusCircle {
+          background-color: rgb(87, 202, 34);
+          border-radius: 22px;
+          width: 10px;
+          height: 10px;
+          display: inline-block;
+          margin-right: 4.5px;
+        }
+      }
+      .header__iconGroup__message__listItemChatButton {
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: rgb(110, 117, 159);
+        font-size: 0.7rem;
+        font-weight: bold;
+        background-color: rgba(110, 117, 159, 0.1);
+        border-radius: 10px;
+        &:hover {
+          background-color: rgb(110, 117, 159);
+          color: rgb(255, 255, 255);
+        }
+      }
+    }
+  }
+  .header__iconGroup__message__viewMoreContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 18px;
+    .header__iconGroup__message__viewMoreButton {
+      background-color: rgb(85, 105, 255);
+      color: white;
+      text-transform: none;
+      font-weight: bold;
+      border-radius: 10px;
+      font-size: 0.8125rem;
+    }
+  }
+}

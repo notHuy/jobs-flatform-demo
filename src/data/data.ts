@@ -643,3 +643,33 @@ export const sortBarMode = [
     name: "Salary range",
   },
 ];
+
+// Header icon group message data
+
+export const messageUserData = [
+  {
+    id: "1",
+    name: "Munroe Dacks",
+    imageUrl: "https://tokyo.bloomui.com/static/images/avatars/1.jpg",
+  },
+  {
+    id: "2",
+    name: "Gunilla Canario",
+    imageUrl: "https://tokyo.bloomui.com/static/images/avatars/2.jpg",
+  },
+  {
+    id: "3",
+    name: "Rowena Geistmann",
+    imageUrl: "https://tokyo.bloomui.com/static/images/avatars/3.jpg",
+  },
+  {
+    id: "4",
+    name: "Ede Stoving",
+    imageUrl: "https://tokyo.bloomui.com/static/images/avatars/4.jpg",
+  },
+  {
+    id: "5",
+    name: "Crissy Spere",
+    imageUrl: "https://tokyo.bloomui.com/static/images/avatars/5.jpg",
+  },
+];
