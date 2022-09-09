@@ -153,10 +153,11 @@ const Login: React.FC = () => {
                 <FormControlWrapper className="auth__login__loginCardFormControl">
                   <Controller
                     rules={{
-                      required: "This is field required",
+                      required: "The email field is required",
                       pattern: {
                         value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                        message: "Invalid email address",
+                        message:
+                          "The email provided should be a valid email address",
                       },
                     }}
                     name="email"
@@ -179,7 +180,7 @@ const Login: React.FC = () => {
                 <FormControlWrapper className="auth__login__loginCardFormControl">
                   <Controller
                     rules={{
-                      required: "This is field required",
+                      required: "The password field is required",
                     }}
                     name="password"
                     control={control}
@@ -195,7 +196,7 @@ const Login: React.FC = () => {
                           defaultValue={"Some Value"}
                           error={errors.password ? true : false}
                           helperText={
-                            errors.password && "The password field is required"
+                            errors.password && errors.password.message
                           }
                         />
                       </>
