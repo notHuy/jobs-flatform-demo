@@ -90,17 +90,18 @@ const data = [
   },
 ];
 
+const DividerWrapper = styled(Divider)(
+  () => `
+          &{
+            background: rgba(34, 51, 84, 0.1);
+          //   color: rgb(34, 51, 84);
+             margin: 18px;
+            width: 1px;
+            }
+          `
+);
+
 const SearchSideBar: React.FC = () => {
-  const DividerWrapper = styled(Divider)(
-    () => `
-            &{
-              background: rgba(34, 51, 84, 0.1);
-            //   color: rgb(34, 51, 84);
-               margin: 18px;
-              width: 1px;
-              }
-            `
-  );
   return (
     <Paper square={false} className="board__searchSideBarContainer">
       <Paper square={false} className="board__searchSideBarPaper" elevation={0}>

@@ -3,14 +3,14 @@ import { Box, Typography, Paper, Link, Avatar } from "src/components";
 import { AccessTimeIcon, CheckIcon } from "src/components/Icon";
 import { styled } from "@mui/material/styles";
 
+const AvatarWrapper = styled(Avatar)(
+  () => `
+          &{
+            margin: 0 auto 2rem !important;
+            }
+          `
+);
 const NotificatioNTasks: React.FC = () => {
-  const AvatarWrapper = styled(Avatar)(
-    () => `
-            &{
-              margin: 0 auto 2rem !important;
-              }
-            `
-  );
   return (
     <Box p={4}>
       <Typography className="header__iconGroup__noti__taskTitle">

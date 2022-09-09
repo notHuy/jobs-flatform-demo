@@ -10,21 +10,21 @@ import { NotificationsNoneIcon, ForumIcon } from "src/components/Icon";
 import SideBar from "src/layout/LayoutWithSideBar/SideBar/index";
 import TemporaryDrawer from "src/components/Drawer";
 
-const IconButtonsGroup = () => {
-  const spin = keyframes`
-  0%, 100% { opacity: 0; }
-  50% { opacity: 1; }
+const spin = keyframes`
+0%, 100% { opacity: 0; }
+50% { opacity: 1; }
 `;
 
-  const AnimatedBadge = styled(Badge)({
-    ".MuiBadge-badge": {
-      top: "-0.3rem",
-      right: "-0.2rem",
-      background: "rgb(87, 202, 34)",
-      animation: `${spin} 0.6s infinite ease`,
-    },
-  });
+const AnimatedBadge = styled(Badge)({
+  ".MuiBadge-badge": {
+    top: "-0.3rem",
+    right: "-0.2rem",
+    background: "rgb(87, 202, 34)",
+    animation: `${spin} 0.6s infinite ease`,
+  },
+});
 
+const IconButtonsGroup = () => {
   const [anchorElNoti, setAnchorElNoti] = useState<HTMLButtonElement | null>(
     null
   );

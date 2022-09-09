@@ -34,6 +34,15 @@ interface MessageProps {
   open: boolean;
 }
 
+const BadgeAvatarWrapper = styled(Badge)(
+  () => `
+       .MuiBadge-badge{
+          bottom: 0.5rem;
+          left: 0.3rem;
+       }
+      `
+);
+
 const Message: React.FC<MessageProps> = ({
   id,
   open,
@@ -41,14 +50,6 @@ const Message: React.FC<MessageProps> = ({
   handleClose,
   handleClickMessage,
 }) => {
-  const BadgeAvatarWrapper = styled(Badge)(
-    () => `
-         .MuiBadge-badge{
-            bottom: 0.5rem;
-            left: 0.3rem;
-         }
-        `
-  );
   return (
     <>
       <Tooltip title="Messenger">

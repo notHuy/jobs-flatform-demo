@@ -12,21 +12,21 @@ import {
   PowerSettingsNew,
 } from "src/components/Icon";
 
-const FooterButton: React.FC = () => {
-  const spin = keyframes`
-  0%, 100% { opacity: 0; }
-  50% { opacity: 1; }
+const spin = keyframes`
+0%, 100% { opacity: 0; }
+50% { opacity: 1; }
 `;
 
-  const AnimatedBadge = styled(Badge)({
-    ".MuiBadge-badge": {
-      top: "-0.3rem",
-      right: "-0.2rem",
-      background: "rgb(87, 202, 34)",
-      animation: `${spin} 0.6s infinite ease`,
-    },
-  });
+const AnimatedBadge = styled(Badge)({
+  ".MuiBadge-badge": {
+    top: "-0.3rem",
+    right: "-0.2rem",
+    background: "rgb(87, 202, 34)",
+    animation: `${spin} 0.6s infinite ease`,
+  },
+});
 
+const FooterButton: React.FC = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const renderButton = (iconName: string) => {

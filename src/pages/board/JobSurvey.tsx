@@ -3,20 +3,22 @@ import { styled } from "@mui/material/styles";
 
 import { Grid, Paper, Typography, IconButton, Box } from "src/components";
 import { ThumbUpOffAltIcon, ThumbDownOffAltIcon } from "src/components/Icon";
+
+const PaperWrapper = styled(Paper)(
+  () => `
+              &{
+                  border-radius:10px;
+                  padding: 2rem;
+                  height: 100%;
+                  display:flex;
+                  flex-direction:column;
+                  justify-content:center;
+                  align-items:center;
+                  }
+              `
+);
+
 const JobSurvey: React.FC = () => {
-  const PaperWrapper = styled(Paper)(
-    () => `
-                &{
-                    border-radius:10px;
-                    padding: 2rem;
-                    height: 100%;
-                    display:flex;
-                    flex-direction:column;
-                    justify-content:center;
-                    align-items:center;
-                    }
-                `
-  );
   return (
     <Grid
       item

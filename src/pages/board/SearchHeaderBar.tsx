@@ -11,18 +11,18 @@ import {
 } from "src/slices/filterJobs";
 import { useAppDispatch } from "src/types/redux";
 
-const SearchHeaderBar: React.FC = () => {
-  const DividerWrapper = styled(Divider)(
-    () => `
-            &{
-              background: rgba(34, 51, 84, 0.1);
-            //   color: rgb(34, 51, 84);
-               margin: 18px;
-              width: 1px;
-              }
-            `
-  );
+const DividerWrapper = styled(Divider)(
+  () => `
+          &{
+            background: rgba(34, 51, 84, 0.1);
+          //   color: rgb(34, 51, 84);
+             margin: 18px;
+            width: 1px;
+            }
+          `
+);
 
+const SearchHeaderBar: React.FC = () => {
   const dispatch = useAppDispatch();
   const filters = useSelector(filterJobsSelectors.selectFilters);
   console.log(filters);

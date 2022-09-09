@@ -24,6 +24,14 @@ import {
 } from "src/slices/filterJobs";
 import { useAppDispatch } from "src/types/redux";
 
+const PaperWrapper = styled(Paper)(
+  () => `
+          &{
+              border-radius:10px;
+              }
+          `
+);
+
 const JobBoard: React.FC = () => {
   const isFirstRun = useRef(true);
   const [retrievedFilteredData, setRetrievedFilteredData] = useState({});
@@ -48,14 +56,6 @@ const JobBoard: React.FC = () => {
   useEffect(() => {
     dispatch(filterJobsSliceActions.loadJobs(data));
   }, [data]);
-
-  const PaperWrapper = styled(Paper)(
-    () => `
-            &{
-                border-radius:10px;
-                }
-            `
-  );
 
   return (
     <>
