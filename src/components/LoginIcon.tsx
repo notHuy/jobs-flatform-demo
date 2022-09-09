@@ -9,7 +9,7 @@ const loginIconsData = [
     size: "80",
     left: "-20",
     top: "-40",
-    imgWidth: "20",
+    imgWidth: "40",
     atl: "Auth0",
   },
   {

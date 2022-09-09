@@ -13,6 +13,7 @@ import {
   Paper,
   Container,
   Link,
+  Alert,
 } from "../../components/index";
 import { authSliceActions } from "src/slices/auth";
 import { useAppDispatch } from "src/types/redux";
@@ -70,6 +71,17 @@ const Login: React.FC = () => {
         <div className="auth__sideBar__wrap">
           <div className="auth__sideBar__cover">
             <Box className="auth__sideBar__mainContent">
+              <a href="/" className="auth__sideBar__pageIcon">
+                <img src="https://i.imgur.com/JGWb9lG.png" alt="asv"></img>
+                <Box className="auth__sideBar__pageIconText">
+                  <Typography className="auth__sideBar__pageIconTextNumber">
+                    3.1
+                  </Typography>
+                  <Typography className="auth__sideBar__pageIconTextText">
+                    Tokyo
+                  </Typography>
+                </Box>
+              </a>
               <Box className="auth__sideBar__content">
                 <Typography className="auth__sideBar__title">
                   Multiple auth methods included
@@ -180,6 +192,7 @@ const Login: React.FC = () => {
                           type="password"
                           variant="outlined"
                           className="auth__login__loginCardFormInput"
+                          defaultValue={"Some Value"}
                           error={errors.password ? true : false}
                           helperText={
                             errors.password && "The password field is required"
@@ -261,6 +274,10 @@ const Login: React.FC = () => {
                   Sign up here
                 </Link>
               </Box>
+              <Alert severity="warning" className="auth__login__alert">
+                Use <span>demo@example.com</span> and password{" "}
+                <span> TokyoPass1@</span>
+              </Alert>
             </Box>
           </Paper>
         </Container>

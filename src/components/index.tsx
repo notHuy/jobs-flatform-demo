@@ -54,6 +54,7 @@ import TimelineSeparator from "@mui/lab/TimelineSeparator";
 import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
+import Alert from "@mui/lab/Alert";
 
 export {
   Accordion,
@@ -112,4 +113,5 @@ export {
   TimelineContent,
   TimelineDot,
   Link,
+  Alert,
 };
