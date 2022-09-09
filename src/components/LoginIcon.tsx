@@ -1,5 +1,5 @@
 import React from "react";
-import { Paper } from "src/components";
+import { Paper, Tooltip } from "src/components";
 import { styled } from "@mui/material/styles";
 
 const loginIconsData = [
@@ -10,7 +10,7 @@ const loginIconsData = [
     left: "-20",
     top: "-40",
     imgWidth: "20",
-    atl: "auth",
+    atl: "Auth0",
   },
   {
     id: "2",
@@ -19,7 +19,7 @@ const loginIconsData = [
     left: "70",
     top: "",
     imgWidth: "50",
-    atl: "firebase",
+    atl: "Firebase",
   },
   {
     id: "3",
@@ -28,7 +28,7 @@ const loginIconsData = [
     left: "170",
     top: "-30",
     imgWidth: "80",
-    atl: "jwt",
+    atl: "JSON Web Token",
   },
   {
     id: "4",
@@ -39,7 +39,7 @@ const loginIconsData = [
     right: "-55",
     bottom: "0",
     imgWidth: "50",
-    atl: "jwt",
+    atl: "Amplify",
   },
 ];
 
@@ -60,7 +60,7 @@ const PaperWrapper = styled(Paper)(
         &:hover{
             border-color: rgb(85, 105, 255);
         }
-        }
+      }
 `
 );
 
@@ -68,19 +68,21 @@ const LoginIcons: React.FC = () => {
   return (
     <>
       {loginIconsData.map((item) => (
-        <PaperWrapper
-          key={item.id}
-          sx={{
-            width: `${item.size}px`,
-            height: `${item.size}px`,
-            top: `${item.top}px`,
-            left: `${item.left}px`,
-            right: `${item.right}px`,
-            bottom: `${item.bottom}px`,
-          }}
-        >
-          <img src={item.imageUrl} width={item.imgWidth} alt={item.atl} />
-        </PaperWrapper>
+        <Tooltip title={item.atl} placement="top" arrow>
+          <PaperWrapper
+            key={item.id}
+            sx={{
+              width: `${item.size}px`,
+              height: `${item.size}px`,
+              top: `${item.top}px`,
+              left: `${item.left}px`,
+              right: `${item.right}px`,
+              bottom: `${item.bottom}px`,
+            }}
+          >
+            <img src={item.imageUrl} width={item.imgWidth} alt={item.atl} />
+          </PaperWrapper>
+        </Tooltip>
       ))}
     </>
   );

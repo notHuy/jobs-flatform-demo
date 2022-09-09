@@ -39,6 +39,17 @@ const FormControlWrapper = styled(FormControl)(
 `
 );
 
+const TextFieldWrapper = styled(TextField)`
+  & label.Mui-focused {
+    color: rgb(85, 105, 255);
+  }
+  & .MuiOutlinedInput-root {
+    &.Mui-focused fieldset {
+      border-color: rgb(85, 105, 255);
+    }
+  }
+`;
+
 const Login: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
@@ -140,7 +151,7 @@ const Login: React.FC = () => {
                     control={control}
                     render={({ field }) => (
                       <>
-                        <TextField
+                        <TextFieldWrapper
                           {...field}
                           id="auth__email"
                           label="Email Address"
@@ -162,7 +173,7 @@ const Login: React.FC = () => {
                     control={control}
                     render={({ field }) => (
                       <>
-                        <TextField
+                        <TextFieldWrapper
                           {...field}
                           id="auth__password"
                           label="Password"
