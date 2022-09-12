@@ -634,3 +634,87 @@
     }
   }
 }
+
+// Info
+
+.header__iconGroup__info__popOver {
+  .header__iconGroup__info__popOverPaper {
+    .header__iconGroup__info {
+      display: flex;
+      background: rgba(34, 51, 84, 0.08);
+      padding: 18px;
+      min-width: 210px;
+      .header__iconGroup__info__ava {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        margin-bottom: 0.5rem;
+      }
+      .header__iconGroup__info__nameAndTitle {
+        text-align: left;
+        padding-left: 0.7rem;
+        .header__iconGroup__info__name {
+          font-size: 14px;
+          line-height: 1.5;
+          font-weight: 700;
+          color: rgb(110, 117, 159);
+        }
+        .header__iconGroup__info__title {
+          margin: 0px;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 1.43;
+          color: rgb(146, 151, 183);
+        }
+      }
+    }
+    .header__iconGroup__info__menuList {
+      padding: 18px;
+      .header__iconGroup__info__menuListItem {
+        border-radius: 50px;
+        padding: 9px 9px 9px 22.5px;
+        min-width: 200px;
+        margin-bottom: 2px;
+        position: relative;
+        color: rgb(34, 51, 84);
+        display: flex;
+        align-items: center;
+        font-size: 1rem;
+        &:hover {
+          color: rgb(36, 66, 175);
+          background-color: rgba(36, 66, 175, 0.1);
+        }
+        .header__iconGroup__info__menuListItemText {
+          font-weight: 700;
+          font-size: 14px;
+        }
+        .header__iconGroup__info__menuListItemIcon {
+          font-size: 0.85rem;
+        }
+      }
+    }
+  }
+}
+
+.header__iconGroup__info__chartDes {
+  display: flex;
+  flex-direction: row;
+  padding: 9px 18px 4.5px;
+  .header__iconGroup__info__chartDesContent {
+    margin-left: 0.2rem;
+    font-size: 13px;
+    .header__iconGroup__info__chartPrimaryText {
+      font-weight: 700;
+      font-size: 25px;
+      line-height: 1.4;
+      color: rgb(34, 51, 84);
+    }
+    .header__iconGroup__info__chartSecondaryText {
+      color: rgba(34, 51, 84, 0.7);
+    }
+  }
+}
+
+.header__iconGroup__info__chart {
+  min-height: 60px;
+}

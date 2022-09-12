@@ -4,6 +4,7 @@ import { keyframes } from "@mui/system";
 
 import Notification from "./Notification";
 import Message from "./Message";
+import Info from "./Info";
 import Languages from "./Languages";
 import { Stack, Badge, IconButton, Tooltip, Avatar } from "src/components";
 import { NotificationsNoneIcon, ForumIcon } from "src/components/Icon";
@@ -34,11 +35,9 @@ const IconButtonsGroup = () => {
   const [anchorElMessage, setAnchorElMessage] =
     useState<HTMLButtonElement | null>(null);
 
-  // const [anchorElMegaMenu, setAnchorElMegaMenu] =
-  //   useState<HTMLButtonElement | null>(null);
-
-  // const [anchorElDashBoard, setAnchorElDashboard] =
-  //   useState<HTMLButtonElement | null>(null);
+  const [anchorElInfo, setAnchorElInfo] = useState<HTMLButtonElement | null>(
+    null
+  );
 
   const handleClickNoti = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorElNoti(event.currentTarget);
@@ -48,6 +47,9 @@ const IconButtonsGroup = () => {
   };
   const handleClickMessage = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorElMessage(event.currentTarget);
+  };
+  const handleClickInfo = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorElInfo(event.currentTarget);
   };
   // const handleClickMegaMenu = (event: React.MouseEvent<HTMLButtonElement>) => {
   //   setAnchorElMegaMenu(event.currentTarget);
@@ -65,6 +67,9 @@ const IconButtonsGroup = () => {
   const handleCloseMessage = () => {
     setAnchorElMessage(null);
   };
+  const handleCloseInfo = () => {
+    setAnchorElInfo(null);
+  };
   // const handleCloseMegaMenu = () => {
   //   setAnchorElMegaMenu(null);
   // };
@@ -75,6 +80,7 @@ const IconButtonsGroup = () => {
   const openNoti = Boolean(anchorElNoti);
   const openLang = Boolean(anchorElLang);
   const openMessage = Boolean(anchorElMessage);
+  const openInfo = Boolean(anchorElInfo);
   // const openMegaMenu = Boolean(anchorElMegaMenu);
   // const openDashboard = Boolean(anchorElDashBoard);
 
@@ -114,18 +120,14 @@ const IconButtonsGroup = () => {
         handleClose={handleCloseMessage}
         handleClickMessage={handleClickMessage}
       />
-      <IconButton
-        aria-label="header__iconGroup__avatar"
-        size="medium"
-        className=" header__iconGroup__iconButton header__iconGroup__iconButtonAvatar"
-      >
-        <Avatar
-          alt="header__iconGroup__avatar"
-          src="https://tokyo.bloomui.com/static/images/avatars/3.jpg"
-          className="header__iconGroup__iconButtonAvatar_Avatar"
-          variant="circular"
-        />
-      </IconButton>
+      <Info
+        open={openInfo}
+        anchorEl={anchorElInfo}
+        id={id}
+        handleClose={handleCloseInfo}
+        handleClickInfo={handleClickInfo}
+      />
+
       <Tooltip title="Toggle Menu">
         <TemporaryDrawer
           btnClassName="header__iconGroup__iconButton  header__iconGroup__iconButtonMenu"

@@ -27,6 +27,8 @@ import UnfoldMoreIcon from "@mui/icons-material/UnfoldMore";
 import PowerSettingsNew from "@mui/icons-material/PowerSettingsNew";
 import MarkChatReadIcon from "@mui/icons-material/MarkChatRead";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import MonetizationOn from "@mui/icons-material/MonetizationOn";
+
 export {
   DeleteIcon,
   AlarmIcon,
@@ -57,4 +59,5 @@ export {
   PowerSettingsNew,
   MarkChatReadIcon,
   ArrowForwardIcon,
+  MonetizationOn,
 };
