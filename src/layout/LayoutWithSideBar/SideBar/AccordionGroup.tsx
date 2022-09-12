@@ -60,18 +60,36 @@ const AccordionDetailsWrapper = styled(AccordionDetails)(
   () => `
         &{
           padding: 1rem;
-          padding-left: 2.5rem;
+          // padding-left: 2.5rem;
           color: rgba(255, 255, 255, 0.7);
           border-radius: 10px;   
           text-decoration: none;   
           font-weight: bold;
           font-size: 0.85rem;
+          display: flex;
+          align-items: center;
         } 
         &:hover{
           background-color: rgba(255, 255, 255, 0.06);
           color: rgb(255, 255, 255);
+          &::before{
+            transform: scale(1);
+            opacity: 1;
+          }
         }
-       
+        &::before{
+          content: "";
+          background: rgb(255, 255, 255);
+          opacity: 0;
+          transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, opacity 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+          width: 6px ;
+          height: 6px;
+          transform: scale(0);
+          transform-origin: center center;  
+          border-radius: 40px;
+          margin-right: 15px;
+          display: inline-block;
+        }
     `
 );
 
