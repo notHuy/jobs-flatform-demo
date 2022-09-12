@@ -4,6 +4,13 @@ import type { RootState } from "src/store/index";
 
 const name = "filterJobs";
 
+export type TypeFilter =
+  | "jobTags"
+  | "locationTags"
+  | "type"
+  | "level"
+  | "salary";
+
 interface jobType {
   imgUrl: string;
   title: string;
@@ -18,11 +25,7 @@ interface filterJobsState {
   filteredJobs: jobType[];
   allJobs: jobType[];
   filters: {
-    jobTags: string[];
-    locationTags: string[];
-    type: string[];
-    level: string[];
-    salary: string[];
+    [key in TypeFilter]: string[];
   };
 }
 
@@ -37,6 +40,15 @@ const initialState: filterJobsState = {
     salary: [],
   },
 };
+
+const modifiedFiltersParameters = (object: string[], type: string) => {
+  return object.map((item) => item.toLowerCase().replace(type, ""));
+};
+
+const modifiedDataParameters = (data: string) => {
+  return data.toLowerCase().replace(/\s/g, "");
+};
+
 const filterJobsSlice = createSlice({
   name,
   initialState,
@@ -46,35 +58,48 @@ const filterJobsSlice = createSlice({
       state.allJobs = actions.payload;
     },
     filterJobs(state, actions): void {
-      const { jobTags, locationTags, type, level, salary } = actions.payload;
-      state.filters.jobTags = jobTags;
-      state.filters.locationTags = locationTags;
-      state.filters.type = type;
-      state.filters.level = level;
-      state.filters.salary = salary;
+      // const { jobTags, locationTags, type, level, salary } = actions.payload;
+      state.filters = { ...state.filters, ...actions.payload };
+      // state.filters.jobTags = jobTags;
+      // state.filters.locationTags = locationTags;
+      // state.filters.type = type;
+      // state.filters.level = level;
+      // state.filters.salary = salary;
 
       let temptJobList = state.allJobs;
-      if (jobTags.length > 0) {
+      if (state.filters.jobTags.length > 0) {
         temptJobList = temptJobList.filter(
           (job) =>
-            jobTags.includes(job.title) ||
-            jobTags.includes(job.type) ||
-            jobTags.includes(job.level)
+            state.filters.jobTags.includes(job.title) ||
+            state.filters.jobTags.includes(job.type) ||
+            state.filters.jobTags.includes(job.level)
         );
       }
-      if (locationTags.length > 0)
+      if (state.filters.locationTags.length > 0)
         temptJobList = temptJobList.filter((job) =>
-          locationTags.includes(job.location)
+          state.filters.locationTags.includes(job.location)
         );
-      if (type.length > 0) {
-        temptJobList = temptJobList.filter((job) => type.includes(job.type));
-      }
-      if (level.length > 0) {
-        temptJobList = temptJobList.filter((job) => level.includes(job.level));
-      }
-      if (salary.length > 0) {
+      if (state.filters.type.length > 0) {
+        const modifiedFilterTypes = modifiedFiltersParameters(
+          state.filters.type,
+          "type"
+        );
         temptJobList = temptJobList.filter((job) =>
-          salary.includes(job.salary)
+          modifiedFilterTypes.includes(modifiedDataParameters(job.type))
+        );
+      }
+      if (state.filters.level.length > 0) {
+        const modifiedFilterTypes = modifiedFiltersParameters(
+          state.filters.level,
+          "level"
+        );
+        temptJobList = temptJobList.filter((job) =>
+          modifiedFilterTypes.includes(modifiedDataParameters(job.level))
+        );
+      }
+      if (state.filters.salary.length > 0) {
+        temptJobList = temptJobList.filter((job) =>
+          state.filters.salary.includes(job.salary)
         );
       }
       state.filteredJobs = temptJobList;

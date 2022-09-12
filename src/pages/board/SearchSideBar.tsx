@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { styled } from "@mui/material/styles";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -17,12 +17,25 @@ import { ExpandMoreIcon } from "src/components/Icon";
 import {
   filterJobsSliceActions,
   filterJobsSelectors,
+  TypeFilter,
 } from "src/slices/filterJobs";
 import { useAppDispatch } from "src/types/redux";
 
-const data = [
+type TypeCategoryItem = {
+  id: string;
+  name: string;
+};
+
+type TypeCategory = {
+  accordionTitle: string;
+  type: string;
+  types: TypeCategoryItem[];
+};
+
+const data: TypeCategory[] = [
   {
     accordionTitle: "Type of employments",
+    type: "type",
     types: [
       {
         id: "typeFullTime",
@@ -48,6 +61,7 @@ const data = [
   },
   {
     accordionTitle: "Seniority Level",
+    type: "level",
     types: [
       {
         id: "levelStudent",
@@ -73,6 +87,7 @@ const data = [
   },
   {
     accordionTitle: "Salary range",
+    type: "salary",
     types: [
       {
         id: "salary7001200",
@@ -98,53 +113,61 @@ interface SearchSideBarProps {
   className: string;
 }
 
+const DividerWrapper = styled(Divider)(
+  () => `
+          &{
+            background: rgba(34, 51, 84, 0.1);
+          //   color: rgb(34, 51, 84);
+             margin: 18px;
+            width: 1px;
+            }
+          `
+);
+
 const SearchSideBar: React.FC<SearchSideBarProps> = ({ className }) => {
-  const DividerWrapper = styled(Divider)(
-    () => `
-            &{
-              background: rgba(34, 51, 84, 0.1);
-            //   color: rgb(34, 51, 84);
-               margin: 18px;
-              width: 1px;
-              }
-            `
-  );
   const dispatch = useAppDispatch();
   const filters = useSelector(filterJobsSelectors.selectFilters);
   console.log(filters);
-  const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(event.target.id);
-    const value = event.target.id;
-    if (event.target.checked) {
+  const generateDispatchItem = (
+    value: string,
+    groupName: string,
+    filters: {
+      [key: string]: string[];
+    }
+  ) => {
+    if (value.includes(groupName)) {
+      console.log("here1");
+      if (filters[groupName].length > 0) {
+        console.log("here2");
+        return filters[groupName].filter((i) => i !== value);
+      } else {
+        console.log("here3");
+        return [];
+      }
+    } else {
+      console.log("here4");
+      return filters[groupName];
+    }
+  };
+  const handleCheckboxChange = (event: any) => {
+    const [type, value] = event.target.id.split("_");
+    console.log(event);
+    console.log(type);
+    console.log(value);
+    const isChecked = filters[type as TypeFilter].includes(value);
+    console.log(isChecked);
+    if (!isChecked) {
       dispatch(
         filterJobsSliceActions.filterJobs({
-          jobTags: filters.jobTags,
-          locationTags: filters.locationTags,
-          type: value.includes("type")
-            ? [...filters.type, value]
-            : filters.type,
-          level: value.includes("level")
-            ? [...filters.level, value]
-            : filters.level,
-          salary: value.includes("salary")
-            ? [...filters.salary, value]
-            : filters.salary,
+          [type]: [...filters[type as TypeFilter], value],
         })
       );
     } else {
       dispatch(
         filterJobsSliceActions.filterJobs({
-          jobTags: filters.jobTags,
-          locationTags: filters.locationTags,
-          type: value.includes("type")
-            ? filters.type.filter((i) => i !== value)
-            : filters.type,
-          level: value.includes("level")
-            ? filters.level.filter((i) => i !== value)
-            : filters.level,
-          salary: value.includes("salary")
-            ? filters.salary.filter((i) => i !== value)
-            : filters.salary,
+          [type]: [...filters[type as TypeFilter]].filter(
+            (item) => item !== value
+          ),
         })
       );
     }
@@ -177,19 +200,21 @@ const SearchSideBar: React.FC<SearchSideBarProps> = ({ className }) => {
               {category.types.map((item) => (
                 <ListItemButton
                   className="board__searchSideBar__listItemButton"
+                  // id={`${category.type}_${item.id}`}
                   onClick={(e) => {
                     e.stopPropagation();
-                    document.getElementById(`${item.id}`)?.click();
+                    document
+                      .getElementById(`${category.type}_${item.id}`)
+                      ?.click();
                   }}
                 >
                   <Checkbox
-                    // checked={checked}
-                    onChange={handleCheckboxChange}
-                    id={`${item.id}`}
+                    checked={filters[category.type as TypeFilter].includes(
+                      item.id
+                    )}
+                    onClick={handleCheckboxChange}
+                    id={`${category.type}_${item.id}`}
                     inputProps={{ "aria-label": "controlled" }}
-                    onClick={(e) => {
-                      document.getElementById(`${item.id}`)?.click();
-                    }}
                   />
                   <Typography className="board__searchSideBar__itemName">
                     {item.name}
