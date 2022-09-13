@@ -169,30 +169,33 @@
       .header__dashboard__header__title {
         text-align: center;
         font-weight: bold;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         color: white;
       }
       .header__dashboard__header__des {
         text-align: center;
+        font-size: 0.95rem;
         color: rgba(247, 241, 241, 0.623);
       }
     }
     .header__dashboard__grid {
       margin-top: 0.5rem;
       .header__dashboard__gridItem {
+        width: 5.5rem;
         .header__dashboard__gridItemPaper {
+          border-radius: 10px;
           .header__dashboard__buttonBase {
             display: flex;
             flex-direction: column;
             width: 100%;
             justify-content: flex-start;
             align-items: flex-start;
-            padding: 1rem;
+            padding: 18px;
             .header__dashboard__customIcon {
             }
             .header__dashboard__name {
               font-weight: bold;
-              font-size: 1.2rem;
+              font-size: 1rem;
             }
           }
         }
