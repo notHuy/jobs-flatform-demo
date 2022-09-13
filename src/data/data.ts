@@ -404,62 +404,77 @@ export const megaMenuData = [
   {
     id: "1",
     title: "Automation",
+    isDisabled: false,
   },
   {
     id: "2",
     title: "Analytics",
+    isDisabled: false,
   },
   {
     id: "3",
     title: "Banking",
+    isDisabled: true,
   },
   {
     id: "4",
     title: "Commerce",
+    isDisabled: false,
   },
   {
     id: "5",
     title: "Crypto",
+    isDisabled: false,
   },
   {
     id: "6",
     title: "Finance",
+    isDisabled: false,
   },
   {
     id: "7",
     title: "Fitness",
+    isDisabled: false,
   },
   {
     id: "8",
     title: "Healthcare",
+    isDisabled: true,
   },
   {
     id: "9",
     title: "Helpdesk",
+    isDisabled: false,
   },
   {
     id: "10",
     title: "Learning",
+    isDisabled: false,
   },
   {
     id: "11",
     title: "Calendar",
+    isDisabled: false,
   },
   {
     id: "12",
     title: "File Manager",
+    isDisabled: false,
   },
   {
     id: "13",
     title: "Job Flatform",
+    isDisabled: true,
   },
   {
     id: "14",
     title: "Messenger",
+    isDisabled: false,
   },
   {
     id: "15",
     title: "Projects board",
+    isDisabled: false,
   },
 ];
 

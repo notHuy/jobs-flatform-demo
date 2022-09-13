@@ -22,6 +22,9 @@ const chartOptions: ApexOptions = {
     curve: "smooth",
     colors: ["#FF0000"],
   },
+  grid: {
+    show: false,
+  },
   yaxis: {
     floating: true,
     axisTicks: {
@@ -32,6 +35,9 @@ const chartOptions: ApexOptions = {
     },
     labels: {
       show: false,
+    },
+    tooltip: {
+      enabled: false,
     },
   },
   xaxis: {
@@ -45,14 +51,21 @@ const chartOptions: ApexOptions = {
     labels: {
       show: false,
     },
+    tooltip: {
+      enabled: false,
+    },
+  },
+  tooltip: {
+    /* remove header of tooltip */
+    x: {
+      show: false,
+    },
   },
   fill: {
     opacity: 1,
   },
   legend: {
-    position: "top",
-    horizontalAlign: "left",
-    offsetX: 40,
+    show: false,
   },
 };
 

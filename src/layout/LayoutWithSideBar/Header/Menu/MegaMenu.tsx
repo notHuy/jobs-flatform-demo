@@ -8,6 +8,7 @@ import {
   Typography,
   ListItemText,
   MenuItem,
+  Divider,
 } from "src/components";
 import { ArrowForwardIosIcon } from "src/components/Icon";
 import { megaMenuData } from "src/data/data";
@@ -62,11 +63,22 @@ const MegaMenu: React.FC<MegaMenuProps> = ({
               className={`header__megaMenu__menuItem header__megaMenu__menuItemGrey ${
                 index === 0 ? "header__megaMenu__menuItemGreyActive" : ""
               } `}
+              disabled={item.isDisabled}
             >
-              <ListItemText>{item.title}</ListItemText>
-              <Typography variant="body2" color="text.secondary">
-                <ArrowForwardIosIcon fontSize="small" color="disabled" />
-              </Typography>
+              <ListItemText
+                primaryTypographyProps={{
+                  className: `header__megaMenu__menuItem__title ${
+                    index === 0 ? "header__megaMenu__menuItem__titleActive" : ""
+                  }`,
+                }}
+              >
+                {item.title}
+              </ListItemText>
+              <ArrowForwardIosIcon
+                fontSize="small"
+                color="disabled"
+                className="header__megaMenu__menuItem__icon"
+              />{" "}
             </MenuItem>
           ))}
         </MenuList>
@@ -76,11 +88,23 @@ const MegaMenu: React.FC<MegaMenuProps> = ({
               className={`header__megaMenu__menuItem header__megaMenu__menuItemGreen ${
                 index === 0 ? "header__megaMenu__menuItemGreenActive" : ""
               }`}
+              disabled={item.isDisabled}
             >
-              <ListItemText>{item.title}</ListItemText>
-              <Typography variant="body2" color="text.secondary">
-                <ArrowForwardIosIcon fontSize="small" color="disabled" />
-              </Typography>
+              <ListItemText
+                primaryTypographyProps={{
+                  className: `header__megaMenu__menuItem__title ${
+                    index === 0 ? "header__megaMenu__menuItem__titleActive" : ""
+                  }`,
+                }}
+              >
+                {item.title}
+              </ListItemText>
+
+              <ArrowForwardIosIcon
+                fontSize="small"
+                color="disabled"
+                className="header__megaMenu__menuItem__icon"
+              />
             </MenuItem>
           ))}
         </MenuList>
@@ -90,15 +114,27 @@ const MegaMenu: React.FC<MegaMenuProps> = ({
               className={`header__megaMenu__menuItem  header__megaMenu__menuItemRed ${
                 index === 0 ? "header__megaMenu__menuItemRedActive" : ""
               } `}
+              disabled={item.isDisabled}
             >
-              <ListItemText>{item.title}</ListItemText>
-              <Typography variant="body2" color="text.secondary">
-                <ArrowForwardIosIcon fontSize="small" color="disabled" />
-              </Typography>
+              <ListItemText
+                primaryTypographyProps={{
+                  className: `header__megaMenu__menuItem__title ${
+                    index === 0 ? "header__megaMenu__menuItem__titleActive" : ""
+                  }`,
+                }}
+              >
+                {item.title}
+              </ListItemText>
+              <ArrowForwardIosIcon
+                fontSize="small"
+                color="disabled"
+                className="header__megaMenu__menuItem__icon"
+              />
             </MenuItem>
           ))}
         </MenuList>
       </div>
+      <Divider />
       <Box className="header__megaMenu__footer">
         <Button variant="text">View more examples</Button>
       </Box>
