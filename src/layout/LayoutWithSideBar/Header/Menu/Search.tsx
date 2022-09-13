@@ -40,9 +40,11 @@ const Search: React.FC<MegaMenuProps> = ({
         horizontal: "left",
       }}
       sx={{
-        backdropFilter: "blur(10px)",
-        backgroundColor: "rgba(0, 0, 0, 0.001)",
-        borderRadius: "1rem",
+        ".MuiBackdrop-invisible": {
+          backdropFilter: "blur(2px)",
+          backgroundColor: "rgba(0, 0, 0, 0.001)",
+          borderRadius: "1rem",
+        },
       }}
       className="header__menuGroup__search__searchPopover"
       PaperProps={{ className: "header__menuGroup__search__searchPaper" }}

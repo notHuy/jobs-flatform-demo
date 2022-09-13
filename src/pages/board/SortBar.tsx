@@ -75,9 +75,11 @@ const SortBar: React.FC = () => {
           horizontal: "right",
         }}
         sx={{
-          backdropFilter: "blur(10px)",
-          backgroundColor: "rgba(0, 0, 0, 0.001)",
-          borderRadius: "1rem",
+          ".MuiBackdrop-invisible": {
+            backdropFilter: "blur(2px)",
+            backgroundColor: "rgba(0, 0, 0, 0.001)",
+            borderRadius: "1rem",
+          },
         }}
         disableScrollLock
         className="header__iconGroup__lang__popOver"

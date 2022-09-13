@@ -75,9 +75,11 @@ const AvatarGroup: React.FC = () => {
             horizontal: "center",
           }}
           sx={{
-            backdropFilter: "blur(10px)",
-            backgroundColor: "rgba(0, 0, 0, 0.001)",
-            borderRadius: "1rem",
+            ".MuiBackdrop-invisible": {
+              backdropFilter: "blur(2px)",
+              backgroundColor: "rgba(0, 0, 0, 0.001)",
+              borderRadius: "1rem",
+            },
           }}
           disableScrollLock
           className="sidebar__AvatarGroup__Popup"

@@ -94,6 +94,7 @@ const AccordionDetailsWrapper = styled(AccordionDetails)(
 );
 
 const AccordionGroup: React.FC = () => {
+  console.log("side bar accordion group render");
   return (
     <Box className="sideBar__AccordionGroup__container">
       {AccordionGroupData.map(({ id, subHeader, accordion }) => (

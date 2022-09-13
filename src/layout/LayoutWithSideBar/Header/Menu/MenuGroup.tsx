@@ -44,7 +44,7 @@ const MenuGroup: React.FC = () => {
 
   const id = openMegaMenu ? "simple-popover" : undefined;
 
-  console.log("mega nenu");
+  console.log("menu group render");
   return (
     <Stack direction="row" className="header__menuGroup">
       <IconButton onClick={handleClickSearch}>
@@ -72,6 +72,7 @@ const MenuGroup: React.FC = () => {
           variant="text"
           onClick={handleClickMegaMenu}
           className="header__menuGroup_button"
+          disableRipple={true}
         >
           Mega Menu
         </Button>
@@ -87,6 +88,7 @@ const MenuGroup: React.FC = () => {
           variant="text"
           onClick={handleClickDashboard}
           className="header__menuGroup_button"
+          disableRipple={true}
         >
           Dashboards
         </Button>

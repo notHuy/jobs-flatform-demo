@@ -1,10 +1,12 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import { Box, Typography } from "src/components";
 import TemporaryDrawer from "../../components/Drawer";
 import SearchSideBar from "./SearchSideBar";
 
 const Title: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <Box mt={4.5} className="board__title__container">
       <Box>
@@ -13,7 +15,7 @@ const Title: React.FC = () => {
           align="center"
           className="board__title__container__mainTitle"
         >
-          Jobs Platform
+          Jobs platform
         </Typography>
         <Typography
           variant="h6"

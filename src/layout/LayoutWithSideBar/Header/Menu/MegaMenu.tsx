@@ -26,6 +26,7 @@ const MegaMenu: React.FC<MegaMenuProps> = ({
   id,
   anchorElMegaMenu,
 }) => {
+  console.log("mega menu run");
   return (
     <Popover
       id={id}
@@ -41,9 +42,11 @@ const MegaMenu: React.FC<MegaMenuProps> = ({
         horizontal: "left",
       }}
       sx={{
-        backdropFilter: "blur(10px)",
-        backgroundColor: "rgba(0, 0, 0, 0.001)",
-        borderRadius: "1rem",
+        ".MuiBackdrop-invisible": {
+          backdropFilter: "blur(2px)",
+          backgroundColor: "rgba(0, 0, 0, 0.001)",
+          borderRadius: "1rem",
+        },
       }}
       disableScrollLock
       className="header__megaMenu__popOver"

@@ -13,6 +13,7 @@ interface LayoutWithSideBarProps {
 }
 
 const LayoutWithSideBar: React.FC<LayoutWithSideBarProps> = () => {
+  console.log("layout redendered");
   return (
     <>
       <Box className="layout__container">
