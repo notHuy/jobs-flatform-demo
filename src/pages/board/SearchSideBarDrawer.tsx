@@ -103,7 +103,10 @@ const DividerWrapper = styled(Divider)(
 
 const SearchSideBar: React.FC = () => {
   return (
-    <Paper square={false} className="board__searchSideBarContainer">
+    <Paper
+      square={false}
+      className="board__searchSideBarContainer custom-paper-elevation"
+    >
       <Paper square={false} className="board__searchSideBarPaper" elevation={0}>
         {data.map((category) => (
           <Accordion

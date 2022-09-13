@@ -123,6 +123,13 @@ const DividerWrapper = styled(Divider)(
             }
           `
 );
+const CheckBoxWrapper = styled(Checkbox)(
+  () => `
+          &.Mui-checked{
+            color: rgb(85, 105, 255);
+           }
+        `
+);
 
 const SearchSideBar: React.FC<SearchSideBarProps> = ({ className }) => {
   const dispatch = useAppDispatch();
@@ -173,12 +180,8 @@ const SearchSideBar: React.FC<SearchSideBarProps> = ({ className }) => {
     }
   };
   return (
-    <Paper square={false} className={className}>
-      <Paper
-        square={false}
-        className="board__searchSideBarPaper custom-paper-elevation"
-        elevation={0}
-      >
+    <Paper square={false} className={`${className} custom-paper-elevation`}>
+      <Paper square={false} className="board__searchSideBarPaper" elevation={0}>
         {data.map((category) => (
           <Accordion
             disableGutters
@@ -208,7 +211,7 @@ const SearchSideBar: React.FC<SearchSideBarProps> = ({ className }) => {
                       ?.click();
                   }}
                 >
-                  <Checkbox
+                  <CheckBoxWrapper
                     checked={filters[category.type as TypeFilter].includes(
                       item.id
                     )}

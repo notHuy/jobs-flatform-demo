@@ -38,26 +38,19 @@ const SortBar: React.FC = () => {
 
   console.log("render");
   return (
-    <Box
-      sx={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        marginBottom: "1rem",
-      }}
-    >
-      <Box>
-        <Typography sx={{color:"rgba(34, 51, 84, 0.7)"}}>
+    <Box className="board__sortBar__container">
+      <Box className="board__sortBar__mainContent">
+        <Typography
+          sx={{
+            color: "rgba(34, 51, 84, 0.7)",
+            lineHeight: "1.75",
+            fontSize: "14px",
+          }}
+          className="board__sortBar__content__typo"
+        >
           Showing
-          <span style={{ fontWeight: "bold" }}>
-            {" "}
-            {selectFilteredJobsLength}
-          </span>{" "}
-          of total
-          <span style={{ fontWeight: "bold" }}>
-            {" "}
-            {selectJobsLength} job positions
-          </span>
+          <span> {selectFilteredJobsLength}</span> of total
+          <span> {selectJobsLength} job positions</span>
         </Typography>
       </Box>
       <Button
