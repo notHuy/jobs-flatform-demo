@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams, NavLink } from "react-router-dom";
 import { styled } from "@mui/material/styles";
 
 import {
@@ -94,6 +94,8 @@ const AccordionDetailsWrapper = styled(AccordionDetails)(
 );
 
 const AccordionGroup: React.FC = () => {
+  const params = useParams();
+  console.log(params);
   console.log("side bar accordion group render");
   return (
     <Box className="sideBar__AccordionGroup__container">
@@ -109,7 +111,9 @@ const AccordionGroup: React.FC = () => {
               elevation={0}
             >
               <AccordionSummaryWrapper
-                expandIcon={<ExpandMoreIcon />}
+                expandIcon={
+                  acc.accordionItem.length !== 0 && <ExpandMoreIcon />
+                }
                 aria-controls="panel1a-content"
               >
                 <CustomIcon
@@ -120,15 +124,22 @@ const AccordionGroup: React.FC = () => {
                   {acc.accordionTitle}
                 </Typography>
               </AccordionSummaryWrapper>
-              <ListWrapper>
-                {acc.accordionItem.map((item) => (
-                  <Link to={item.link}>
-                    <AccordionDetailsWrapper>
-                      {item.name}
-                    </AccordionDetailsWrapper>
-                  </Link>
-                ))}
-              </ListWrapper>
+              {acc.accordionItem.length !== 0 && (
+                <ListWrapper>
+                  {acc.accordionItem.map((item) => (
+                    <NavLink
+                      to={item.link}
+                      className={({ isActive }) =>
+                        isActive ? "accordionItemActive" : undefined
+                      }
+                    >
+                      <AccordionDetailsWrapper>
+                        {item.name}
+                      </AccordionDetailsWrapper>
+                    </NavLink>
+                  ))}
+                </ListWrapper>
+              )}
             </Accordion>
           ))}
         </Box>

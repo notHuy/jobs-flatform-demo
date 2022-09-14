@@ -6,8 +6,8 @@ import Notification from "./Notification";
 import Message from "./Message";
 import Info from "./Info";
 import Languages from "./Languages";
-import { Stack, Badge, IconButton, Tooltip, Avatar } from "src/components";
-import { NotificationsNoneIcon, ForumIcon } from "src/components/Icon";
+import { Stack, Badge, IconButton, Tooltip } from "src/components";
+import { NotificationsActiveTwoToneIcon } from "src/components/Icon";
 import SideBar from "src/layout/LayoutWithSideBar/SideBar/index";
 import TemporaryDrawer from "src/components/Drawer";
 
@@ -96,7 +96,7 @@ const IconButtonsGroup = () => {
           onClick={handleClickNoti}
         >
           <AnimatedBadge color="success" variant="dot" badgeContent=" ">
-            <NotificationsNoneIcon fontSize="inherit" sx={{ fontSize: 22 }} />
+            <NotificationsActiveTwoToneIcon fontSize="small" />
           </AnimatedBadge>
         </IconButton>
       </Tooltip>

@@ -64,7 +64,7 @@ const Info: React.FC<InfoProps> = ({
       <IconButton
         aria-label="header__iconGroup__avatar"
         size="medium"
-        className=" header__iconGroup__iconButton header__iconGroup__iconButtonAvatar"
+        className="header__iconGroup__iconButton header__iconGroup__iconButtonAvatar"
         onClick={handleClickInfo}
       >
         <Avatar

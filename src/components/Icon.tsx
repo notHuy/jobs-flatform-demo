@@ -28,7 +28,7 @@ import PowerSettingsNew from "@mui/icons-material/PowerSettingsNew";
 import MarkChatReadIcon from "@mui/icons-material/MarkChatRead";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import MonetizationOn from "@mui/icons-material/MonetizationOn";
-
+import NotificationsActiveTwoToneIcon from "@mui/icons-material/NotificationsActiveTwoTone";
 export {
   DeleteIcon,
   AlarmIcon,
@@ -60,4 +60,5 @@ export {
   MarkChatReadIcon,
   ArrowForwardIcon,
   MonetizationOn,
+  NotificationsActiveTwoToneIcon,
 };

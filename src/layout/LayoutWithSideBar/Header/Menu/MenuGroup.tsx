@@ -47,8 +47,11 @@ const MenuGroup: React.FC = () => {
   console.log("menu group render");
   return (
     <Stack direction="row" className="header__menuGroup">
-      <IconButton onClick={handleClickSearch}>
-        <SearchIcon className="header__menuGroup__searchButton" />
+      <IconButton
+        onClick={handleClickSearch}
+        className="header__menuGroup__searchButtonButton"
+      >
+        <SearchIcon className="header__menuGroup__searchButtonIcon" />
       </IconButton>
       <Search
         id={id}
@@ -63,7 +66,7 @@ const MenuGroup: React.FC = () => {
       />
       <Box
         sx={{
-          marginLeft: "1rem",
+          marginLeft: "18px",
           gap: "1rem",
         }}
       >
@@ -73,8 +76,9 @@ const MenuGroup: React.FC = () => {
           onClick={handleClickMegaMenu}
           className="header__menuGroup_button"
           disableRipple={true}
+          size="small"
         >
-          Mega Menu
+          Mega menu
         </Button>
         <MegaMenu
           id={id}

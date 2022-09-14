@@ -43,6 +43,16 @@ const BadgeAvatarWrapper = styled(Badge)(
       `
 );
 
+const BadgeMessageWrapper = styled(Badge)(
+  () => `
+       .MuiBadge-badge{
+          bottom: -0.2rem;
+          right: -0.2rem;
+          color: rgb(255, 25, 67);
+       }
+      `
+);
+
 const Message: React.FC<MessageProps> = ({
   id,
   open,
@@ -59,7 +69,7 @@ const Message: React.FC<MessageProps> = ({
           className="header__iconGroup__iconButton header__iconGroup__iconButtonMessage"
           onClick={handleClickMessage}
         >
-          <Badge
+          <BadgeMessageWrapper
             color="error"
             variant="dot"
             anchorOrigin={{
@@ -68,7 +78,7 @@ const Message: React.FC<MessageProps> = ({
             }}
           >
             <ForumIcon fontSize="inherit" sx={{ fontSize: 20 }} />
-          </Badge>
+          </BadgeMessageWrapper>
         </IconButton>
       </Tooltip>
       <Popover

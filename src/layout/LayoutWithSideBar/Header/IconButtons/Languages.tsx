@@ -59,7 +59,7 @@ const Languages: React.FC<LanguagesProps> = ({
           className="header__iconGroup__iconButton header__iconGroup__iconButtonLang"
           onClick={handleClickLang}
         >
-          <Icon sx={{ fontSize: 22 }}>{renderIcon(selectedLang)}</Icon>
+          {renderIcon(selectedLang)}
         </IconButton>
       </Tooltip>{" "}
       <Popover

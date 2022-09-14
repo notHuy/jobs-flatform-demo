@@ -27,6 +27,10 @@ const routes = () => [
         path: "job",
         element: <JobFlatform />,
       },
+      {
+        path: "*",
+        element: <JobFlatform />,
+      },
     ],
   },
 ];
