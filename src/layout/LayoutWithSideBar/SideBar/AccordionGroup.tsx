@@ -19,7 +19,7 @@ const AccordionSummaryWrapper = styled(AccordionSummary)(
   () => `
         &{
           .MuiAccordionSummary-expandIconWrapper{
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(255, 255, 255, 0.5);
           }
           color: rgba(255, 255, 255, 0.7);
           border-radius: 10px;
@@ -36,8 +36,15 @@ const AccordionSummaryWrapper = styled(AccordionSummary)(
           min-height: 48px;
           background-color: rgba(255, 255, 255, 0.06); 
           color: rgb(255, 255, 255);
+          .MuiAccordionSummary-expandIconWrapper{
+          color: rgb(255, 255, 255);
+          }
+          .sideBar__AccordionGroup__icon{
+          color: rgb(255, 255, 255) !important;
+          }
         }
         .MuiAccordionSummary-content{ 
+          display: flex;
           align-items: center;
         }
         .MuiAccordionSummary-content.Mui-expanded {
@@ -60,7 +67,7 @@ const AccordionDetailsWrapper = styled(AccordionDetails)(
   () => `
         &{
           padding: 1rem;
-          // padding-left: 2.5rem;
+          padding-left: 27px;
           color: rgba(255, 255, 255, 0.7);
           border-radius: 10px;   
           text-decoration: none;   
@@ -104,44 +111,48 @@ const AccordionGroup: React.FC = () => {
           <ListSubheader className="sideBar__AccordionGroup__ListSubheader">
             {subHeader}
           </ListSubheader>
-          {accordion.map((acc) => (
-            <Accordion
-              disableGutters
-              className="sideBar__AccordionGroup__accordion"
-              elevation={0}
-            >
-              <AccordionSummaryWrapper
-                expandIcon={
-                  acc.accordionItem.length !== 0 && <ExpandMoreIcon />
-                }
-                aria-controls="panel1a-content"
+          <Box p={1}>
+            {accordion.map((acc) => (
+              <Accordion
+                disableGutters
+                className="sideBar__AccordionGroup__accordion"
+                elevation={0}
               >
-                <CustomIcon
-                  name={acc.accordionIcon}
-                  className="sideBar__AccordionGroup__icon"
-                />
-                <Typography className="sideBar__AccordionGroup__title">
-                  {acc.accordionTitle}
-                </Typography>
-              </AccordionSummaryWrapper>
-              {acc.accordionItem.length !== 0 && (
-                <ListWrapper>
-                  {acc.accordionItem.map((item) => (
-                    <NavLink
-                      to={item.link}
-                      className={({ isActive }) =>
-                        isActive ? "accordionItemActive" : undefined
-                      }
-                    >
-                      <AccordionDetailsWrapper>
-                        {item.name}
-                      </AccordionDetailsWrapper>
-                    </NavLink>
-                  ))}
-                </ListWrapper>
-              )}
-            </Accordion>
-          ))}
+                <AccordionSummaryWrapper
+                  expandIcon={
+                    acc.accordionItem.length !== 0 && (
+                      <ExpandMoreIcon className="sideBar__AccordionGroup__expandIcon" />
+                    )
+                  }
+                  aria-controls="panel1a-content"
+                >
+                  <CustomIcon
+                    name={acc.accordionIcon}
+                    className="sideBar__AccordionGroup__icon"
+                  />
+                  <Typography className="sideBar__AccordionGroup__title">
+                    {acc.accordionTitle}
+                  </Typography>
+                </AccordionSummaryWrapper>
+                {acc.accordionItem.length !== 0 && (
+                  <ListWrapper>
+                    {acc.accordionItem.map((item) => (
+                      <NavLink
+                        to={item.link}
+                        className={({ isActive }) =>
+                          isActive ? "accordionItemActive" : undefined
+                        }
+                      >
+                        <AccordionDetailsWrapper>
+                          {item.name}
+                        </AccordionDetailsWrapper>
+                      </NavLink>
+                    ))}
+                  </ListWrapper>
+                )}
+              </Accordion>
+            ))}
+          </Box>
         </Box>
       ))}
     </Box>

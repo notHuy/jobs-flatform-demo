@@ -45,8 +45,8 @@
     overflow: scroll;
     position: absolute;
     inset: 0px;
-    margin-right: -25px;
-    margin-bottom: -25px;
+    margin-right: -17px;
+    margin-bottom: -17px;
     .sideBar__AvatarGroup__Container {
       position: relative;
       margin-right: 1rem;
@@ -55,7 +55,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-top: 1rem;
+        padding-top: 9px;
         .sideBar__AvatarGroup__mainAvatar {
           width: 68px;
           height: 68px;
@@ -68,22 +68,22 @@
           color: rgb(255, 255, 255);
         }
         .sideBar__AvatarGroup__subTitle {
-          font-size: 0.8rem;
+          font-size: 14px;
         }
         .sideBar__AvatarGroup__IconButton {
           color: rgba(255, 255, 255, 0.7);
           background-color: rgba(255, 255, 255, 0.1);
           border-radius: 8px;
           display: inline-flex;
-          top: 0;
-          right: 1.3rem;
+          top: -0.1rem;
+          right: 0.7rem;
           position: absolute;
-          padding: 1rem;
-          width: 15px !important;
-          height: 15px !important;
+          padding: 4px;
+          width: 28px !important;
+          height: 28px !important;
           .MuiSvgIcon-root {
-            height: 1.2rem;
-            width: 1.2rem;
+            height: 20px;
+            width: 20px;
           }
         }
         .sideBar__AccordionGroup__item {
@@ -162,28 +162,39 @@
 
 .sideBar__AccordionGroup__container {
   .sideBar__AccordionGroup__component {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    // padding-left: 1.5rem;
+    // padding-right: 1.5rem;
+    padding: 9px;
     .sideBar__AccordionGroup__ListSubheader {
       background-color: transparent;
       color: rgba(255, 255, 255, 0.5);
       font-weight: bold;
       font-size: 0.75rem;
+      line-height: normal;
+      padding: 0 22.5px;
     }
     .sideBar__AccordionGroup__accordion {
       background-color: transparent;
       color: rgba(255, 255, 255, 0.7);
-      margin-left: 1rem;
+      margin-left: 0.5rem;
       &::before {
         display: none;
         content: none !important;
       }
+      .sideBar__AccordionGroup__expandIcon {
+        width: 20px;
+        height: 20px;
+      }
+
       .sideBar__AccordionGroup__icon {
         color: rgba(255, 255, 255, 0.3);
         margin-right: 0.5rem;
-        width: 0.9rem;
-        height: 0.9rem;
-        margin-bottom: 0.2rem;
+        width: 20px;
+        height: 20px;
+      }
+      &:hover .sideBar__AccordionGroup__icon,
+      &:hover .sideBar__AccordionGroup__expandIcon {
+        color: rgb(255, 255, 255);
       }
       .sideBar__AccordionGroup__title {
         font-weight: bold;
@@ -191,9 +202,6 @@
         line-height: 1.75;
       }
     }
-  }
-  &:hover &.sideBar__AccordionGroup__icon {
-    color: rgb(255, 255, 255);
   }
 }
 

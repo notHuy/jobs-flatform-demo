@@ -20,7 +20,7 @@ const MainSideBar: React.FC = () => {
     <>
       <Box className="sideBar__mainSideBarWrap">
         <Box className="sideBar__mainSideBarContainer">
-          <Box mt={3}>
+          <Box sx={{ marginTop: "27px", height: "38px" }}>
             <Tooltip title="Tokyo React Typescript Admin Dashboard" arrow>
               <img
                 src="https://i.imgur.com/HxdIvTO.png"

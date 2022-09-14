@@ -29,6 +29,7 @@ import MarkChatReadIcon from "@mui/icons-material/MarkChatRead";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import MonetizationOn from "@mui/icons-material/MonetizationOn";
 import NotificationsActiveTwoToneIcon from "@mui/icons-material/NotificationsActiveTwoTone";
+import BackupTableTwoToneIcon from "@mui/icons-material/BackupTableTwoTone";
 export {
   DeleteIcon,
   AlarmIcon,
@@ -61,4 +62,5 @@ export {
   ArrowForwardIcon,
   MonetizationOn,
   NotificationsActiveTwoToneIcon,
+  BackupTableTwoToneIcon,
 };

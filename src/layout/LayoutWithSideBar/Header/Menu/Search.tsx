@@ -67,6 +67,7 @@ const Search: React.FC<MegaMenuProps> = ({
             sx={{ ml: 1, flex: 1 }}
             inputProps={{ "aria-label": "searchInput" }}
             className="header__menuGroup__search__inputBase"
+            placeholder="Search terms here..."
           />
           <Paper
             square={false}

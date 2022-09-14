@@ -7,8 +7,8 @@ export const AccordionGroupData = [
     accordion: [
       {
         id: "1",
-        accordionTitle: "Blueprint",
-        accordionIcon: "Newspaper",
+        accordionTitle: "Blueprints",
+        accordionIcon: "BackupTableTwoTone",
         accordionItem: [
           { id: "1", name: "Extended sidebar", link: "job" },
           { id: "2", name: "Accent header", link: "/accent-header" },
