@@ -5,18 +5,17 @@ import Chart from "react-apexcharts";
 const chartOptions: ApexOptions = {
   series: [
     {
-      name: "Marine Sprite",
-      data: [44, 55, 41, 37, 22, 43, 21],
+      name: "Net loss",
+      type: "bar",
+      data: [44, 55, 41, 67, 22, 43, 44, 55, 41, 67],
     },
     {
-      name: "Striking Calf",
-      data: [53, 32, 33, 52, 13, 43, 32],
-    },
-    {
-      name: "Tank Picture",
-      data: [12, 17, 11, 9, 15, 11, 20],
+      name: "Net profit",
+      type: "bar",
+      data: [13, 23, 20, 8, 13, 27, 13, 23, 20, 8],
     },
   ],
+  colors: ["rgb(88, 93, 127)", "rgb(153, 158, 187)"],
   chart: {
     type: "bar",
     height: 350,
@@ -24,48 +23,90 @@ const chartOptions: ApexOptions = {
     toolbar: {
       show: false,
     },
+
+    zoom: {
+      enabled: true,
+    },
   },
+  stroke: {
+    show: false,
+  },
+  responsive: [
+    {
+      breakpoint: 480,
+      options: {
+        legend: {
+          position: "bottom",
+          offsetX: -10,
+          offsetY: 0,
+        },
+      },
+    },
+  ],
   plotOptions: {
     bar: {
       horizontal: false,
-      columnWidth: "50%",
+      borderRadius: 7,
+      dataLabels: {
+        position: "top",
+        maxItems: 100,
+        hideOverflowingLabels: true,
+      },
     },
   },
-  //   stroke: {
-  //     width: 1,
-  //     colors: ["#000000"],
-  //   },
-  title: {
-    text: "",
+  dataLabels: {
+    enabled: true,
+    textAnchor: "middle",
+    background: {
+      enabled: true,
+      borderColor: "transparent",
+      foreColor: "#fff",
+      dropShadow: {
+        enabled: false,
+        color: "transparent",
+      },
+    },
   },
   xaxis: {
-    categories: [2008, 2009, 2010, 2011, 2012, 2013, 2014],
+    type: undefined,
+    categories: [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday",
+      "Last week",
+      "Last month",
+      "Last year",
+    ],
     labels: {
-      formatter: function (val) {
-        return val + "K";
-      },
+      show: false,
     },
   },
   yaxis: {
-    title: {
-      text: undefined,
+    floating: true,
+    axisTicks: {
+      show: false,
+    },
+    axisBorder: {
+      show: false,
+    },
+    labels: {
+      show: false,
+    },
+    tooltip: {
+      enabled: false,
     },
   },
-  tooltip: {
-    y: {
-      formatter: function (val) {
-        return val + "K";
-      },
-    },
-  },
-  fill: {
-    opacity: 1,
+  grid: {
+    show: false,
   },
   legend: {
-    position: "top",
-    horizontalAlign: "left",
-    offsetX: 40,
+    show: false,
   },
+  fill: {},
 };
 
 const NotificationReportChart: React.FC = () => {

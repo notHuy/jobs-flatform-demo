@@ -13,7 +13,7 @@ const NotificationReport: React.FC = () => {
         Total Sales
       </Typography>
       <Typography
-        className="header__iconGroup__noti__detail__avatar__text"
+        className="header__iconGroup__noti__detail__avatar__subText"
         sx={{ textAlign: "center" }}
       >
         Total sales performance for last week
