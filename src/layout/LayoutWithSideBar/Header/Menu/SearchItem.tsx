@@ -39,7 +39,14 @@ const SearchItem: React.FC<SearchItemProps> = (props: SearchItemProps) => {
           </div>
         );
       case "saved":
-        return <CloseTwoToneIcon fontSize="small" color="error" />;
+        return (
+          <IconButton
+            className="header__menuGroup__search__endIconBtn"
+            size="small"
+          >
+            <CloseTwoToneIcon fontSize="small" color="error" />
+          </IconButton>
+        );
     }
   };
   return (
