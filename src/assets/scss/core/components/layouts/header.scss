@@ -514,6 +514,10 @@
               "Segoe UI Emoji";
             line-height: 1.57;
             text-align: center;
+            span {
+              color: rgb(87, 202, 34);
+              font-weight: bold;
+            }
           }
         }
       }
@@ -528,9 +532,12 @@
   height: 38px;
   min-height: 38px !important;
   overflow: visible !important;
+
   .header__iconGroup__noti__tab {
     height: 38px;
     min-height: 38px !important;
+    font-weight: bold;
+    font-size: 0.75rem;
     &.Mui-selected {
       color: rgb(255, 255, 255);
       z-index: 5;
@@ -573,6 +580,67 @@
     &::before {
       content: none;
     }
+    .header__iconGroup__noti__timelineContent {
+      padding: 6px 16px 36px 27px;
+      text-align: left;
+      .header__iconGroup__noti__timelineContentText {
+        font-size: 14px !important;
+        font-weight: bold;
+      }
+      .header__iconGroup__noti__timelineContentSubText {
+        font-size: 14px !important;
+        color: rgba(34, 51, 84, 0.7);
+      }
+      .header__iconGroup__noti__timelineContentAvatarGroup {
+        align-items: flex-start;
+        margin-top: 9px;
+        display: flex;
+      }
+      .header__iconGroup__noti__timelineContentImageGroup {
+        align-items: flex-start;
+        margin-top: 18px;
+        display: flex;
+        .header__iconGroup__noti__timelineContentImageGroupCard {
+          max-width: 90;
+          max-height: 64;
+          border-radius: 10px;
+          margin-right: 1rem;
+        }
+      }
+      .header__iconGroup__noti__timelineContentButtonGroup {
+        display: flex;
+        margin-top: 9px;
+        align-items: flex-start;
+        .header__iconGroup__noti__timelineContentButtonGroupButton {
+          color: rgb(255, 255, 255);
+          background-color: rgb(85, 105, 255);
+          font-weight: bold;
+          text-transform: none;
+          border-radius: 10px;
+          padding: 6px 16px;
+          width: auto;
+        }
+      }
+    }
+    .header__iconGroup__noti__timelineSeperator {
+      position: relative;
+      flex: 0 1 0%;
+      flex-direction: column;
+      .header__iconGroup__noti__timelineDot {
+        position: absolute;
+        top: -9px;
+        z-index: 5;
+      }
+      .header__iconGroup__noti__timelineConnector {
+        width: 2px;
+        flex-grow: 1;
+        position: absolute;
+        height: 100%;
+        top: 0px;
+        border-radius: 50px;
+        background-color: rgba(34, 51, 84, 0.1);
+      }
+    }
   }
 }
 
@@ -580,10 +648,11 @@
 
 .header__iconGroup__noti__taskTitle {
   color: rgba(34, 51, 84, 0.5);
-  font-size: 1rem;
-  font-weight: 900;
+  font-size: 13px !important;
+  font-weight: 700 !important;
   text-transform: uppercase;
   padding-bottom: 1rem;
+  line-height: 1.5;
 }
 
 .header__iconGroup__noti__taskTitleSecond {
@@ -593,11 +662,32 @@
 
 .header__iconGroup__noti__taskPaper {
   padding: 1rem;
+  border-radius: 10px !important;
   a {
     color: black;
   }
+  position: relative;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  .header__iconGroup__noti__taskPaperBeforeIcon {
+    height: 60%;
+    width: 6px;
+    left: -3px;
+    border-radius: 50px;
+    position: absolute;
+    top: 20%;
+    background: rgb(85, 105, 255);
+  }
+  .header__iconGroup__noti__taskPaperLink {
+    font-size: 16px;
+
+    line-height: 1.235;
+    font-weight: normal;
+    text-decoration: none;
+  }
   .header__iconGroup__noti__taskPaper__detail {
     display: flex;
+
     .header__iconGroup__noti__taskPaper__detail__onHoldBtn {
       text-transform: uppercase;
       font-size: 0.7rem;
@@ -615,10 +705,24 @@
     }
     .header__iconGroup__noti__detail__avatarGroup {
       text-align: center;
+      .header__iconGroup__noti__detail__avatar {
+      }
     }
   }
 }
 
+.header__iconGroup__noti__detail__avatar__text {
+  margin: 0px 0px 4px !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  line-height: 1.235 !important;
+}
+.header__iconGroup__noti__detail__avatar__subText {
+  margin: 0px 0px 4px !important;
+  font-size: 15px !important;
+  line-height: 1.235 !important;
+  color: rgba(34, 51, 84, 0.7);
+}
 // iconGroup Lang
 
 .header__iconGroup__lang__popOver {
@@ -857,4 +961,27 @@
 
 .header__iconGroup__info__chart {
   min-height: 60px;
+}
+
+//icon Group footer
+
+.header__iconGroup__noti__footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .header__iconGroup__noti__footerBtn {
+    text-transform: none;
+    color: rgb(85, 105, 255);
+    border: 2px solid rgb(85, 105, 255);
+    padding: 4.5px 18px;
+    border-radius: 100px;
+    font-weight: bold;
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    &:hover {
+      background-color: rgb(85, 105, 255);
+      color: white;
+      padding-left: 27px;
+      padding-right: 27px;
+    }
+  }
 }

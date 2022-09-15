@@ -48,6 +48,8 @@ import SvgIcon from "@mui/material/SvgIcon";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Link from "@mui/material/Link";
+import CardMedia from "@mui/material/CardMedia";
+import AvatarGroup from "@mui/material/AvatarGroup";
 import Timeline from "@mui/lab/Timeline";
 import TimelineItem from "@mui/lab/TimelineItem";
 import TimelineSeparator from "@mui/lab/TimelineSeparator";
@@ -58,6 +60,7 @@ import Alert from "@mui/lab/Alert";
 
 export {
   Accordion,
+  AvatarGroup,
   AccordionSummary,
   AccordionDetails,
   Grid,
@@ -67,6 +70,7 @@ export {
   Container,
   Paper,
   Card,
+  CardMedia,
   FormControl,
   InputLabel,
   FormGroup,

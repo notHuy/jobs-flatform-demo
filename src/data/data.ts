@@ -720,27 +720,22 @@ export const menuGroupSearchPopularSearch = [
 export const dataTimeline = [
   {
     id: "1",
-    icon: "Menu",
+    icon: "BusinessCenterTwoTone",
     title: "Java exam day",
     content: "Bill Clinton's presidential scandal makes it online.",
   },
   {
     id: "2",
-    icon: "Menu",
-    title: "Java exam day",
-    content: "Bill Clinton's presidential scandal makes it online.",
+    icon: "AssignmentIndTwoTone",
+    title: "Business investor meeting",
+    content:
+      "Mosaic, the first graphical browser, is introduced to the average consumer.",
   },
   {
     id: "3",
-    icon: "Menu",
-    title: "Java exam day",
-    content: "Bill Clinton's presidential scandal makes it online.",
-  },
-  {
-    id: "4",
-    icon: "Menu",
-    title: "Java exam day",
-    content: "Bill Clinton's presidential scandal makes it online.",
+    icon: "",
+    title: "Learning round table gathering",
+    content: "First ever iPod launches.",
   },
 ];
 

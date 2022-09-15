@@ -36,9 +36,11 @@ import ContactSupportTwoToneIcon from "@mui/icons-material/ContactSupportTwoTone
 import StarTwoToneIcon from "@mui/icons-material/StarTwoTone";
 import CloseTwoToneIcon from "@mui/icons-material/CloseTwoTone";
 import DashboardTwoToneIcon from "@mui/icons-material/DashboardTwoTone";
+import ArrowForwardTwoToneIcon from "@mui/icons-material/ArrowForwardTwoTone";
 
 export {
   DeleteIcon,
+  ArrowForwardTwoToneIcon,
   AlarmIcon,
   CropFreeIcon,
   ExpandMoreIcon,

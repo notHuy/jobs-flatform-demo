@@ -7,6 +7,10 @@ const AvatarWrapper = styled(Avatar)(
   () => `
           &{
             margin: 0 auto 2rem !important;
+            color: rgb(87, 202, 34);
+            background-color: rgba(87, 202, 34, 0.1);
+            width: 90px;
+            height: 90px;
             }
           `
 );
@@ -20,9 +24,14 @@ const NotificatioNTasks: React.FC = () => {
         className="header__iconGroup__noti__taskPaper"
         square={false}
         variant="outlined"
-        elevation={4}
+        elevation={3}
       >
-        <Link href="#" underline="hover">
+        <Box className="header__iconGroup__noti__taskPaperBeforeIcon"></Box>
+        <Link
+          href="#"
+          underline="hover"
+          className="header__iconGroup__noti__taskPaperLink"
+        >
           Presentation site design
         </Link>
         <Box className="header__iconGroup__noti__taskPaper__detail" mt={2}>
@@ -60,7 +69,7 @@ const NotificatioNTasks: React.FC = () => {
           Nothing to report{" "}
         </Typography>
         <Typography
-          className="header__iconGroup__noti__detail__avatar__text"
+          className="header__iconGroup__noti__detail__avatar__subText"
           sx={{ textAlign: "center" }}
         >
           You don't have any other pending tasks in progress!

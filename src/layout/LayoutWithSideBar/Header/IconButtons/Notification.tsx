@@ -1,7 +1,10 @@
 import React from "react";
-import { Popover, Box, Typography, Grid } from "src/components";
+
 import NotificationTab from "./NotificationTab";
 import NotificationTabContent from "./NotificationTabContent";
+
+import { Popover, Box, Typography, Button, Divider } from "src/components";
+import { ArrowForwardTwoToneIcon } from "src/components/Icon";
 
 interface NotificationProps {
   id: string | undefined;
@@ -54,13 +57,24 @@ const Notification: React.FC<NotificationProps> = ({
               Notifications
             </Typography>
             <Typography className="header__iconGroup__noti__headerHeadLayer3__content">
-              You have 483 new messages
+              You have <span>483</span> new messages
             </Typography>
           </Box>
         </Box>
         <NotificationTab value={value} handleChange={handleChange} />
       </Box>
       <NotificationTabContent value={value} />
+      <Divider />
+      <Box p={3} className="header__iconGroup__noti__footer">
+        <Button
+          variant="outlined"
+          size="small"
+          className="header__iconGroup__noti__footerBtn"
+          endIcon={<ArrowForwardTwoToneIcon />}
+        >
+          View all
+        </Button>
+      </Box>
     </Popover>
   );
 };
