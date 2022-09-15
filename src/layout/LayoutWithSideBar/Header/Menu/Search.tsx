@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { useForm, Controller, SubmitHandler } from "react-hook-form";
 
 import SearchMenu from "./SearchMenu";
 import SearchStartMenu from "./SearchStartMenu";
@@ -14,6 +15,10 @@ import {
 } from "src/components";
 import { SearchIcon } from "src/components/Icon";
 
+type FormValues = {
+  input: string;
+};
+
 interface MegaMenuProps {
   id: string | undefined;
   anchorElDashboard: Element | ((element: Element) => Element) | null;
@@ -27,6 +32,21 @@ const Search: React.FC<MegaMenuProps> = ({
   id,
   anchorElDashboard,
 }: MegaMenuProps) => {
+  const defaultValues = {
+    input: "",
+  };
+  const {
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useForm<FormValues>({ defaultValues });
+
+  const [textInput, setTextInput] = useState("");
+
+  const onSubmit: SubmitHandler<FormValues> = (data: FormValues) => {
+    console.log(data);
+  };
+  const onChangeFirst = (value: string) => setTextInput(value);
   return (
     <Popover
       id={id}
@@ -65,12 +85,24 @@ const Search: React.FC<MegaMenuProps> = ({
           <IconButton sx={{ p: "10px" }} aria-label="menu">
             <SearchIcon />
           </IconButton>
-          <InputBase
-            sx={{ ml: 1, flex: 1 }}
-            inputProps={{ "aria-label": "searchInput" }}
-            className="header__menuGroup__search__inputBase"
-            placeholder="Search terms here..."
+          <Controller
+            name="input"
+            control={control}
+            render={({ field }) => (
+              <InputBase
+                sx={{ ml: 1, flex: 1 }}
+                inputProps={{ "aria-label": "searchInput" }}
+                className="header__menuGroup__search__inputBase"
+                placeholder="Search terms here..."
+                {...field}
+                onChange={(e) => {
+                  onChangeFirst(e.target.value);
+                  field.onChange(e);
+                }}
+              />
+            )}
           />
+
           <Paper
             square={false}
             className="header__menuGroup__search__inputEscBtn"
@@ -85,8 +117,8 @@ const Search: React.FC<MegaMenuProps> = ({
       {/* <Box className="header__menuGroup__search__result"> */}
       {/* <Box className="header__menuGroup__search__resultWrap">
           <Box className="header__menuGroup__search__resultContainer"> */}
+      {!textInput ? <SearchStartMenu /> : <SearchMenu />}
       {/* <SearchMenu /> */}
-      <SearchStartMenu />
       {/* </Box>
         </Box> */}
       {/* </Box> */}
