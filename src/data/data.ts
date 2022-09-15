@@ -652,6 +652,69 @@ export const menuGroupSearch = [
   },
 ];
 
+export const menuGroupRecentSearch = [
+  {
+    id: "1",
+    name: "Automation UI",
+    group: "dashboards",
+  },
+  {
+    id: "2",
+    name: "Banking Performance",
+    group: "dashboards",
+  },
+];
+export const menuGroupSavedSearch = [
+  {
+    id: "1",
+    name: "Hospital overview page",
+    group: "dashboards",
+  },
+];
+
+export const menuGroupSearchPopularSearch = [
+  {
+    id: "1",
+    name: "Tasks for today",
+    group: "dashboards",
+  },
+  {
+    id: "2",
+    name: "Statistics dashboard",
+    group: "dashboards",
+  },
+  {
+    id: "3",
+    name: "Monitoring admin",
+    group: "dashboards",
+  },
+  {
+    id: "4",
+    name: "Banking interface",
+    group: "dashboards",
+  },
+  {
+    id: "5",
+    name: "Calendar",
+    group: "management",
+  },
+  {
+    id: "6",
+    name: "File manager",
+    group: "management",
+  },
+  {
+    id: "7",
+    name: "Product lists",
+    group: "management",
+  },
+  {
+    id: "8",
+    name: "Recent orders",
+    group: "management",
+  },
+];
+
 // Icon Buttons Data Timeline
 
 export const dataTimeline = [

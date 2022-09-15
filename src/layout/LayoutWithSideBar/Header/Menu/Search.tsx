@@ -1,4 +1,8 @@
 import React from "react";
+
+import SearchMenu from "./SearchMenu";
+import SearchStartMenu from "./SearchStartMenu";
+
 import {
   Box,
   Popover,
@@ -8,9 +12,7 @@ import {
   InputBase,
   Divider,
 } from "src/components";
-import { SearchIcon, HistoryIcon, ExpandMoreIcon } from "src/components/Icon";
-import { menuGroupSearch } from "src/data/data";
-import ScrollBar from "src/components/ScrollBar";
+import { SearchIcon } from "src/components/Icon";
 
 interface MegaMenuProps {
   id: string | undefined;
@@ -24,7 +26,7 @@ const Search: React.FC<MegaMenuProps> = ({
   open,
   id,
   anchorElDashboard,
-}) => {
+}: MegaMenuProps) => {
   return (
     <Popover
       id={id}
@@ -73,73 +75,21 @@ const Search: React.FC<MegaMenuProps> = ({
             square={false}
             className="header__menuGroup__search__inputEscBtn"
           >
-            esc
+            <Typography className="header__menuGroup__search__inputEscBtnText">
+              esc
+            </Typography>
           </Paper>
         </Paper>
       </Box>
       <Divider />
-      <Box className="header__menuGroup__search__result">
-        <ScrollBar>
-          {/* <Box className="header__menuGroup__search__resultWrap">
+      {/* <Box className="header__menuGroup__search__result"> */}
+      {/* <Box className="header__menuGroup__search__resultWrap">
           <Box className="header__menuGroup__search__resultContainer"> */}
-          <Box className="header__menuGroup__search__resultGroup">
-            <Typography className="header__menuGroup__search__resultTitle">
-              Dashboards
-            </Typography>
-            {menuGroupSearch.map((item) => {
-              if (item.group === "dashboards") {
-                return (
-                  <Box className="header__menuGroup__search__itemContainer">
-                    <Box className="header__menuGroup__search__itemLeft">
-                      <HistoryIcon />
-                      <Typography>{item.name}</Typography>
-                    </Box>
-                    <ExpandMoreIcon />
-                  </Box>
-                );
-              }
-            })}
-          </Box>
-          <Box className="header__menuGroup__search__resultGroup">
-            <Typography className="header__menuGroup__search__resultTitle">
-              Application
-            </Typography>
-            {menuGroupSearch.map((item) => {
-              if (item.group === "applications") {
-                return (
-                  <Box className="header__menuGroup__search__itemContainer">
-                    <Box className="header__menuGroup__search__itemLeft">
-                      <HistoryIcon />
-                      <Typography>{item.name}</Typography>
-                    </Box>
-                    <ExpandMoreIcon />
-                  </Box>
-                );
-              }
-            })}
-          </Box>
-          <Box className="header__menuGroup__search__resultGroup">
-            <Typography className="header__menuGroup__search__resultTitle">
-              Management
-            </Typography>
-            {menuGroupSearch.map((item) => {
-              if (item.group === "management") {
-                return (
-                  <Box className="header__menuGroup__search__itemContainer">
-                    <Box className="header__menuGroup__search__itemLeft">
-                      <HistoryIcon />
-                      <Typography>{item.name}</Typography>
-                    </Box>
-                    <ExpandMoreIcon />
-                  </Box>
-                );
-              }
-            })}
-          </Box>
-          {/* </Box>
+      {/* <SearchMenu /> */}
+      <SearchStartMenu />
+      {/* </Box>
         </Box> */}
-        </ScrollBar>
-      </Box>
+      {/* </Box> */}
     </Popover>
   );
 };

@@ -30,6 +30,13 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import MonetizationOn from "@mui/icons-material/MonetizationOn";
 import NotificationsActiveTwoToneIcon from "@mui/icons-material/NotificationsActiveTwoTone";
 import BackupTableTwoToneIcon from "@mui/icons-material/BackupTableTwoTone";
+import RestoreTwoToneIcon from "@mui/icons-material/RestoreTwoTone";
+import KeyboardArrowRightTwoToneIcon from "@mui/icons-material/KeyboardArrowRightTwoTone";
+import ContactSupportTwoToneIcon from "@mui/icons-material/ContactSupportTwoTone";
+import StarTwoToneIcon from "@mui/icons-material/StarTwoTone";
+import CloseTwoToneIcon from "@mui/icons-material/CloseTwoTone";
+import DashboardTwoToneIcon from "@mui/icons-material/DashboardTwoTone";
+
 export {
   DeleteIcon,
   AlarmIcon,
@@ -63,4 +70,10 @@ export {
   MonetizationOn,
   NotificationsActiveTwoToneIcon,
   BackupTableTwoToneIcon,
+  RestoreTwoToneIcon,
+  KeyboardArrowRightTwoToneIcon,
+  ContactSupportTwoToneIcon,
+  StarTwoToneIcon,
+  CloseTwoToneIcon,
+  DashboardTwoToneIcon,
 };
