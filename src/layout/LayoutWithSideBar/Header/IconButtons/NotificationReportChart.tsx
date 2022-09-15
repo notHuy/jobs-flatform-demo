@@ -18,7 +18,7 @@ const chartOptions: ApexOptions = {
   colors: ["rgb(88, 93, 127)", "rgb(153, 158, 187)"],
   chart: {
     type: "bar",
-    height: 350,
+    height: "auto",
     stacked: true,
     toolbar: {
       show: false,
@@ -48,7 +48,7 @@ const chartOptions: ApexOptions = {
       horizontal: false,
       borderRadius: 7,
       dataLabels: {
-        position: "top",
+        position: "center",
         maxItems: 100,
         hideOverflowingLabels: true,
       },
@@ -57,14 +57,22 @@ const chartOptions: ApexOptions = {
   dataLabels: {
     enabled: true,
     textAnchor: "middle",
+    style: {
+      colors: undefined,
+    },
     background: {
       enabled: true,
       borderColor: "transparent",
       foreColor: "#fff",
+      opacity: 0,
       dropShadow: {
         enabled: false,
         color: "transparent",
       },
+    },
+    dropShadow: {
+      enabled: false,
+      color: "transparent",
     },
   },
   xaxis: {
