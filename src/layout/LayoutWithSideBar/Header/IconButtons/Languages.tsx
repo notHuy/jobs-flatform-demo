@@ -107,7 +107,13 @@ const Languages: React.FC<LanguagesProps> = ({
                 >
                   {renderIcon(item.id)}
                 </Icon>
-                <ListItemText>{item.title}</ListItemText>
+                <ListItemText
+                  primaryTypographyProps={{
+                    className: "header__iconGroup__lang__menuItem__title",
+                  }}
+                >
+                  {item.title}
+                </ListItemText>
               </MenuItem>
             ))}
           </MenuList>

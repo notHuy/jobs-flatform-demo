@@ -750,7 +750,7 @@
     padding: 0.5rem 1rem;
     min-width: 200px;
     border-radius: 1rem;
-    margin-bottom: 0.4rem;
+    margin-bottom: 1px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -759,6 +759,9 @@
       align-items: center;
       justify-content: center;
       margin-right: 1.5rem;
+    }
+    .header__iconGroup__lang__menuItem__title {
+      font-size: 14px !important;
     }
   }
   .header__iconGroup__lang__menuItemGrey {
