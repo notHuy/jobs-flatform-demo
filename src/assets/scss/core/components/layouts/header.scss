@@ -82,9 +82,13 @@
     background-color: rgba(34, 51, 84, 0.06);
     .header__megaMenu__header__title {
       font-weight: bold;
-      font-size: 1.2rem;
+      font-size: 16px !important;
+      line-height: 1.235;
+      padding-bottom: 4.5px;
     }
     .header__megaMenu__header__des {
+      font-size: 15px !important;
+      color: rgba(34, 51, 84, 0.7);
     }
   }
   .header__megaMenu__menuListsContainer {
