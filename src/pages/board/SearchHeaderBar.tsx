@@ -21,6 +21,15 @@ const DividerWrapper = styled(Divider)(
             }
           `
 );
+const AutocompleteWrapper = styled(Autocomplete)(
+  () => `
+        &{
+          .MuiAutocomplete-popper{
+            color: red;
+          }
+        }
+          `
+);
 
 const SearchHeaderBar: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -72,16 +81,17 @@ const SearchHeaderBar: React.FC = () => {
           getOptionLabel={(option) => option.tagName}
           // defaultValue={[jobTags[1]]}
           filterSelectedOptions
+          componentsProps={{
+            popper: {
+              className: "board__searchHeaderAutoCompletePopper",
+            },
+          }}
+          onChange={handleSearchJobTagsChange}
           renderInput={(params) => (
             <TextField {...params} label="Job Tags" placeholder="Job" />
           )}
-          onChange={handleSearchJobTagsChange}
         />
-        <DividerWrapper
-          variant="fullWidth"
-          orientation="vertical"
-          //   flexItem
-        />
+        <DividerWrapper variant="fullWidth" orientation="vertical" />
         <Autocomplete
           className="board__searchHeaderAutoComplete"
           multiple
@@ -90,6 +100,12 @@ const SearchHeaderBar: React.FC = () => {
           getOptionLabel={(option) => option.tagName}
           // defaultValue={[locationTags[1]]}
           filterSelectedOptions
+          componentsProps={{
+            popper: {
+              className: "board__searchHeaderAutoCompletePopper",
+            },
+          }}
+          onChange={handleSearchLocationTagsChange}
           renderInput={(params) => (
             <TextField
               {...params}
@@ -97,7 +113,6 @@ const SearchHeaderBar: React.FC = () => {
               placeholder="Location"
             />
           )}
-          onChange={handleSearchLocationTagsChange}
         />
       </Box>
     </Paper>

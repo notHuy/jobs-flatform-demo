@@ -11,16 +11,16 @@ const Title: React.FC = () => {
     <Box mt={4.5} className="board__title__container">
       <Box>
         <Typography
-          variant="h3"
+          variant="h4"
+          component="h4"
           align="center"
           className="board__title__container__mainTitle"
         >
-          Jobs platform
+          Jobs Platform
         </Typography>
         <Typography
-          variant="h6"
           align="center"
-          sx={{ color: "rgba(34, 51, 84, 0.7)" }}
+          sx={{ color: "rgba(34, 51, 84, 0.7)", fontSize: "16px" }}
         >
           Find your dream job, fast and easy!
         </Typography>
