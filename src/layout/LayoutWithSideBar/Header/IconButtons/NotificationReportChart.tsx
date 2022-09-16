@@ -18,7 +18,7 @@ const chartOptions: ApexOptions = {
   colors: ["rgb(88, 93, 127)", "rgb(153, 158, 187)"],
   chart: {
     type: "bar",
-    height: "auto",
+    height: "200px",
     stacked: true,
     toolbar: {
       show: false,
@@ -119,7 +119,9 @@ const chartOptions: ApexOptions = {
 
 const NotificationReportChart: React.FC = () => {
   const [options, setOptions] = useState(chartOptions);
-  return <Chart options={options} series={options.series}></Chart>;
+  return (
+    <Chart options={options} series={options.series} height="200px"></Chart>
+  );
 };
 
 export default NotificationReportChart;
