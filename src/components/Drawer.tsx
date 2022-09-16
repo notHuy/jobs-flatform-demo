@@ -43,27 +43,25 @@ const TemporaryDrawer: ReactFC<TemporaryDrawerProps> = ({
   );
 
   return (
-    <div>
-      <React.Fragment>
-        <Tooltip title={tooltip ? tooltip : ""}>
-          <IconButton
-            aria-label="menuBtn"
-            onClick={toggleDrawer(true)}
-            className={btnClassName}
-          >
-            <MenuIcon />
-          </IconButton>
-        </Tooltip>
-        <Drawer
-          anchor="left"
-          open={state}
-          onClose={toggleDrawer(false)}
-          className={className}
+    <React.Fragment>
+      <Tooltip title={tooltip ? tooltip : ""}>
+        <IconButton
+          aria-label="menuBtn"
+          onClick={toggleDrawer(true)}
+          className={btnClassName}
         >
-          {list()}
-        </Drawer>
-      </React.Fragment>
-    </div>
+          <MenuIcon />
+        </IconButton>
+      </Tooltip>
+      <Drawer
+        anchor="left"
+        open={state}
+        onClose={toggleDrawer(false)}
+        className={className}
+      >
+        {list()}
+      </Drawer>
+    </React.Fragment>
   );
 };
 

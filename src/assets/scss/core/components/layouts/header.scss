@@ -380,7 +380,8 @@
     &:nth-child(2) {
       margin: 0px 9px;
     }
-    &:nth-child(4) {
+    &:nth-child(4),
+    &:nth-child(5) {
       margin-left: 9px;
     }
   }
