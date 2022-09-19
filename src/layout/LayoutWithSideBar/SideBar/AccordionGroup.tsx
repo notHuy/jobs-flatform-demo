@@ -1,6 +1,7 @@
 import React from "react";
-import { Link, useParams, NavLink } from "react-router-dom";
+import { useParams, NavLink } from "react-router-dom";
 import { styled } from "@mui/material/styles";
+import { BadgeProps } from "@mui/material/Badge";
 
 import {
   Box,
@@ -10,13 +11,20 @@ import {
   AccordionSummary,
   AccordionDetails,
   Typography,
+  Badge,
+  Tooltip,
 } from "src/components";
 import { ExpandMoreIcon } from "src/components/Icon";
 import { AccordionGroupData } from "src/data/data";
 import CustomIcon from "src/components/CustomIcon";
 
+interface StyledBadgeProps extends BadgeProps {
+  right?: string;
+}
+
 const AccordionSummaryWrapper = styled(AccordionSummary)(
   () => `
+        position: relative;
         &{
           .MuiAccordionSummary-expandIconWrapper{
             color: rgba(255, 255, 255, 0.5);
@@ -75,6 +83,7 @@ const AccordionDetailsWrapper = styled(AccordionDetails)(
           font-size: 0.85rem;
           display: flex;
           align-items: center;
+          position: relative;
         } 
         &:hover{
           background-color: rgba(255, 255, 255, 0.06);
@@ -97,6 +106,22 @@ const AccordionDetailsWrapper = styled(AccordionDetails)(
           margin-right: 15px;
           display: inline-block;
         }
+    `
+);
+
+const BadgeWrapper = styled(Badge, {
+  shouldForwardProp: (prop: string) => prop !== "right",
+})<StyledBadgeProps>(
+  ({ right }: StyledBadgeProps) => `
+       position: absolute;
+       right: ${right}px;
+      .MuiBadge-badge{
+        background: rgb(85, 105, 255);
+        font-size: 0.625rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: rgb(255, 255, 255);
+      }
     `
 );
 
@@ -133,6 +158,15 @@ const AccordionGroup: React.FC = () => {
                   <Typography className="sideBar__AccordionGroup__title">
                     {acc.accordionTitle}
                   </Typography>
+                  {acc.notiText && acc.notiText.length !== 0 && (
+                    <Tooltip title={acc.notiText} placement="right" arrow>
+                      <BadgeWrapper
+                        right="60"
+                        badgeContent={""}
+                        variant="dot"
+                      />
+                    </Tooltip>
+                  )}
                 </AccordionSummaryWrapper>
                 {acc.accordionItem.length !== 0 && (
                   <ListWrapper>
@@ -145,6 +179,25 @@ const AccordionGroup: React.FC = () => {
                       >
                         <AccordionDetailsWrapper>
                           {item.name}
+                          {item.notiText && item.notiText.length !== 0 && (
+                            <Tooltip
+                              title={item.notiText}
+                              placement="right"
+                              arrow
+                            >
+                              <BadgeWrapper
+                                right="27"
+                                badgeContent={
+                                  item.name === "Extended sidebar" ? "V3.0" : ""
+                                }
+                                variant={
+                                  item.name === "Extended sidebar"
+                                    ? "standard"
+                                    : "dot"
+                                }
+                              />
+                            </Tooltip>
+                          )}
                         </AccordionDetailsWrapper>
                       </NavLink>
                     ))}
