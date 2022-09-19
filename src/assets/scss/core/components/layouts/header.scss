@@ -281,6 +281,9 @@
   &:first-of-type {
     padding: 0px 0px 9px;
   }
+  &.header__menuGroup__search__resultGroupShowResult {
+    padding: 9px 18px;
+  }
   .header__menuGroup__search__resultTitle {
     font-weight: bold;
     padding: 0px 0px 4.5px;

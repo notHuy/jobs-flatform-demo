@@ -10,7 +10,7 @@ const SearchMenu = () => {
   return (
     <Box className="header__menuGroup__search__result">
       <ScrollBar>
-        <Box className="header__menuGroup__search__resultGroup">
+        <Box className="header__menuGroup__search__resultGroup header__menuGroup__search__resultGroupShowResult">
           <Typography className="header__menuGroup__search__resultTitle">
             Dashboards
           </Typography>
@@ -22,7 +22,7 @@ const SearchMenu = () => {
             }
           })}
         </Box>
-        <Box className="header__menuGroup__search__resultGroup">
+        <Box className="header__menuGroup__search__resultGroup header__menuGroup__search__resultGroupShowResult">
           <Typography className="header__menuGroup__search__resultTitle">
             Application
           </Typography>
@@ -34,7 +34,7 @@ const SearchMenu = () => {
             }
           })}
         </Box>
-        <Box className="header__menuGroup__search__resultGroup">
+        <Box className="header__menuGroup__search__resultGroup header__menuGroup__search__resultGroupShowResult">
           <Typography className="header__menuGroup__search__resultTitle">
             Management
           </Typography>
