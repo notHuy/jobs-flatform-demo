@@ -1,16 +1,8 @@
 import React from "react";
 
 import SearchItem from "./SearchItem";
-
-import {
-  Typography,
-  Box,
-  Divider,
-  Grid,
-  ListItem,
-  List,
-  Link,
-} from "src/components";
+import { Link } from "react-router-dom";
+import { Typography, Box, Divider, Grid, ListItem, List } from "src/components";
 import {
   ContactSupportTwoToneIcon,
   DashboardTwoToneIcon,
@@ -80,7 +72,10 @@ const SearchStartMenu: React.FC<SearchStartMenuProps> = () => {
                               id={item.id}
                               className="header__menuGroup__search__popularSearches__gridSubListItem"
                             >
-                              <Link underline="none">
+                              <Link
+                                to="/"
+                                className="header__menuGroup__search__popularSearches__gridSubItemLink"
+                              >
                                 <Typography className="header__menuGroup__search__popularSearches__gridSubItemText">
                                   {item.name}
                                 </Typography>
@@ -114,7 +109,10 @@ const SearchStartMenu: React.FC<SearchStartMenuProps> = () => {
                               id={item.id}
                               className="header__menuGroup__search__popularSearches__gridSubListItem"
                             >
-                              <Link underline="none">
+                              <Link
+                                to="/"
+                                className="header__menuGroup__search__popularSearches__gridSubItemLink"
+                              >
                                 <Typography className="header__menuGroup__search__popularSearches__gridSubItemText">
                                   {item.name}
                                 </Typography>

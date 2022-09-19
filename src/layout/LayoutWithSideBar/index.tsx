@@ -20,7 +20,7 @@ const LayoutWithSideBar: React.FC<LayoutWithSideBarProps> = () => {
         <Header />
         <SideBar />
         <Box className="layout__content__container">
-          <Suspense fallback={<SuspenseLoading />}>
+          <Suspense fallback={<SuspenseLoading fullHeight/>}>
             <Outlet />
           </Suspense>
         </Box>

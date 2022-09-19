@@ -355,10 +355,17 @@
   border-radius: 8px !important;
 }
 
+.header__menuGroup__search__popularSearches__gridItem {
+  .MuiList-root {
+    padding: 0;
+  }
+}
+
 .header__menuGroup__search__popularSearches__gridSubContainer {
   display: flex;
   align-items: center;
   margin-bottom: 9px;
+
   .header__menuGroup__search__popularSearches__gridSubIcon {
     color: rgb(85, 105, 255);
     margin-right: 9px;
@@ -372,9 +379,15 @@
   padding: 3.2px 0 3.2px 27px !important;
 }
 
-.header__menuGroup__search__popularSearches__gridSubItemText {
-  font-size: 13px !important;
+.header__menuGroup__search__popularSearches__gridSubItemLink {
   color: rgb(85, 105, 255) !important;
+  text-decoration: none !important;
+  .header__menuGroup__search__popularSearches__gridSubItemText {
+    font-size: 13px !important;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 .header__menuGroup__search__popularSearches__gridItem {

@@ -11,10 +11,18 @@
   color: rgb(34, 51, 84) !important;
 }
 
-.suspendLoading {
+.suspendLoadingFullHeight {
   display: flex;
   width: 100%;
   height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.suspendLoading {
+  display: flex;
+  width: 100%;
+  height: 100px;
   justify-content: center;
   align-items: center;
 }

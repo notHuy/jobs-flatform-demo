@@ -19,7 +19,7 @@ let persistor = persistStore(store);
 
 root.render(
   // <StrictMode>
-  <Suspense fallback={<SuspendLoading />}>
+  <Suspense fallback={<SuspendLoading fullHeight />}>
     <Provider store={store}>
       <PersistGate persistor={persistor}>
         <Router basename={`/`}>

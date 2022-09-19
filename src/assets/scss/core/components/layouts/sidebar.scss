@@ -85,6 +85,10 @@
             height: 20px;
             width: 20px;
           }
+          &:hover {
+            color: rgb(255, 255, 255);
+            background: rgba(255, 255, 255, 0.2);
+          }
         }
         .sideBar__AccordionGroup__item {
           padding-left: 5rem;

@@ -3,10 +3,9 @@ import { useForm, Controller, SubmitHandler } from "react-hook-form";
 
 import SearchMenu from "./SearchMenu";
 import SearchStartMenu from "./SearchStartMenu";
-
+import SuspenseLoading from "src/components/SuspenseLoading";
 import {
   Box,
-  Popover,
   Typography,
   Paper,
   IconButton,
@@ -42,11 +41,28 @@ const Search: React.FC<MegaMenuProps> = ({
   } = useForm<FormValues>({ defaultValues });
 
   const [textInput, setTextInput] = useState("");
-
+  const [isLoading, setIsLoading] = useState(false);
   const onSubmit: SubmitHandler<FormValues> = (data: FormValues) => {
     console.log(data);
   };
-  const onChangeFirst = (value: string) => setTextInput(value);
+  const onChangeFirst = (value: string) => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+    setTextInput(value);
+  };
+  const renderSearchMenu = () => {
+    if (!isLoading) {
+      if (!textInput) {
+        return <SearchStartMenu />;
+      } else {
+        return <SearchMenu />;
+      }
+    } else {
+      return <SuspenseLoading />;
+    }
+  };
   return (
     <Dialog
       open={open}
@@ -57,59 +73,54 @@ const Search: React.FC<MegaMenuProps> = ({
       className="header__menuGroup__search__searchDialog"
       PaperProps={{ className: "header__menuGroup__search__searchPaper" }}
     >
-      <Box className="header__menuGroup__search__inputContainer">
-        <Paper
-          component="form"
-          sx={{
-            display: "flex",
-            alignItems: "center",
-          }}
-          elevation={0}
-          className="header__menuGroup__search__inputPaper"
-        >
-          <IconButton
-            aria-label="menu"
-            className="header__menuGroup__search__inputSearchIcon"
-          >
-            <SearchIcon />
-          </IconButton>
-          <Controller
-            name="input"
-            control={control}
-            render={({ field }) => (
-              <InputBase
-                sx={{ ml: 1, flex: 1 }}
-                inputProps={{ "aria-label": "searchInput" }}
-                className="header__menuGroup__search__inputBase"
-                placeholder="Search terms here..."
-                {...field}
-                onChange={(e) => {
-                  onChangeFirst(e.target.value);
-                  field.onChange(e);
-                }}
-              />
-            )}
-          />
-
+      <>
+        <Box className="header__menuGroup__search__inputContainer">
           <Paper
-            square={false}
-            className="header__menuGroup__search__inputEscBtn"
+            component="form"
+            sx={{
+              display: "flex",
+              alignItems: "center",
+            }}
+            elevation={0}
+            className="header__menuGroup__search__inputPaper"
           >
-            <Typography className="header__menuGroup__search__inputEscBtnText">
-              esc
-            </Typography>
+            <IconButton
+              aria-label="menu"
+              className="header__menuGroup__search__inputSearchIcon"
+            >
+              <SearchIcon />
+            </IconButton>
+            <Controller
+              name="input"
+              control={control}
+              render={({ field }) => (
+                <InputBase
+                  sx={{ ml: 1, flex: 1 }}
+                  inputProps={{ "aria-label": "searchInput" }}
+                  className="header__menuGroup__search__inputBase"
+                  placeholder="Search terms here..."
+                  {...field}
+                  onChange={(e) => {
+                    onChangeFirst(e.target.value);
+                    field.onChange(e);
+                  }}
+                />
+              )}
+            />
+
+            <Paper
+              square={false}
+              className="header__menuGroup__search__inputEscBtn"
+            >
+              <Typography className="header__menuGroup__search__inputEscBtnText">
+                esc
+              </Typography>
+            </Paper>
           </Paper>
-        </Paper>
-      </Box>
-      <Divider />
-      {/* <Box className="header__menuGroup__search__result"> */}
-      {/* <Box className="header__menuGroup__search__resultWrap">
-          <Box className="header__menuGroup__search__resultContainer"> */}
-      {!textInput ? <SearchStartMenu /> : <SearchMenu />}
-      {/* <SearchMenu /> */}
-      {/* </Box>
-        </Box> */}
-      {/* </Box> */}
+        </Box>
+        <Divider />
+        {renderSearchMenu()}
+      </>
     </Dialog>
   );
 };

@@ -1,9 +1,15 @@
 import { CircularProgress } from "@mui/material";
 import React from "react";
 
-const Suspend: React.FC = () => {
+interface SuspendLoadingProps {
+  fullHeight?: boolean;
+}
+
+const Suspend: React.FC<SuspendLoadingProps> = ({
+  fullHeight,
+}: SuspendLoadingProps) => {
   return (
-    <div className="suspendLoading">
+    <div className={fullHeight ? "suspendLoadingFullHeight" : "suspendLoading"}>
       <CircularProgress color="inherit" />
     </div>
   );
