@@ -11,6 +11,7 @@ import {
   IconButton,
 } from "src/components";
 import { langData } from "src/data/data";
+import i18n from "src/i18n";
 import { US, CN, DE, ES, FR, SA } from "country-flag-icons/react/3x2";
 
 interface LanguagesProps {
@@ -47,6 +48,7 @@ const Languages: React.FC<LanguagesProps> = ({
 
   const [selectedLang, setSelectedLang] = React.useState("1");
   const handleClick = (index: string) => (event: React.SyntheticEvent) => {
+    i18n.changeLanguage(langData.find((i) => i.id === index)?.lang);
     setSelectedLang(index);
     handleClose();
   };

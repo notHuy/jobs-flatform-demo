@@ -746,31 +746,37 @@ export const langData = [
     id: "1",
     title: "English",
     icon: "US",
+    lang: "en",
   },
   {
     id: "2",
     title: "German",
     icon: "DE",
+    lang: "de",
   },
   {
     id: "3",
     title: "Spanish",
     icon: "ES",
+    lang: "es",
   },
   {
     id: "4",
     title: "French",
     icon: "FR",
+    lang: "fr",
   },
   {
     id: "5",
     title: "Chinese",
     icon: "CN",
+    lang: "cn",
   },
   {
     id: "6",
     title: "Arabic",
     icon: "SA",
+    lang: "sa",
   },
 ];
 

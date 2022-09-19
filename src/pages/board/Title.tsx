@@ -16,13 +16,13 @@ const Title: React.FC = () => {
           align="center"
           className="board__title__container__mainTitle"
         >
-          Jobs Platform
+          {t("JOBBOARD_TITLE")}
         </Typography>
         <Typography
           align="center"
           sx={{ color: "rgba(34, 51, 84, 0.7)", fontSize: "16px" }}
         >
-          Find your dream job, fast and easy!
+          {t("JOBBOARD_SUBTITLE")}
         </Typography>
       </Box>
       <TemporaryDrawer
