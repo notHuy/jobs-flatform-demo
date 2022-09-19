@@ -48,7 +48,7 @@ const Languages: React.FC<LanguagesProps> = ({
 
   const [selectedLang, setSelectedLang] = React.useState("1");
   const handleClick = (index: string) => (event: React.SyntheticEvent) => {
-    i18n.changeLanguage(langData.find((i) => i.id === index)?.lang);
+    i18n.changeLanguage(langData.find((i) => i.id === index)!.lang);
     setSelectedLang(index);
     handleClose();
   };

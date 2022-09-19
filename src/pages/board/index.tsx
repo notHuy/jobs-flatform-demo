@@ -18,7 +18,7 @@ const JobFlatform: React.FC = () => {
           <Grid item xs={12}>
             <Title />
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={12} className="board__gridItem__headerBar">
             <SearchHeaderBar />
           </Grid>
           <Grid item xs={12} lg={3} xl={3} className="board__gridItem__sideBar">

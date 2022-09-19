@@ -14,10 +14,10 @@ import { useAppDispatch } from "src/types/redux";
 const DividerWrapper = styled(Divider)(
   () => `
           &{
-            background: rgba(34, 51, 84, 0.1);
-          //   color: rgb(34, 51, 84);
-             margin: 18px;
+            color: rgb(34, 51, 84);
+            margin: 0px 18px;
             width: 1px;
+            height: 53px;
             }
           `
 );
@@ -91,7 +91,11 @@ const SearchHeaderBar: React.FC = () => {
             <TextField {...params} label="Job Tags" placeholder="Job" />
           )}
         />
-        <DividerWrapper variant="fullWidth" orientation="vertical" />
+        <Divider
+          variant="fullWidth"
+          orientation="vertical"
+          className="board__searchHeaderDivider"
+        />
         <Autocomplete
           className="board__searchHeaderAutoComplete"
           multiple
