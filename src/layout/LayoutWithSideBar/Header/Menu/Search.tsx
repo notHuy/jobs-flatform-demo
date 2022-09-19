@@ -12,8 +12,10 @@ import {
   IconButton,
   InputBase,
   Divider,
+  Dialog,
 } from "src/components";
 import { SearchIcon } from "src/components/Icon";
+import { TransitionDialog } from "src/components/TransitionDialog";
 
 type FormValues = {
   input: string;
@@ -21,7 +23,6 @@ type FormValues = {
 
 interface MegaMenuProps {
   id: string | undefined;
-  anchorElDashboard: Element | ((element: Element) => Element) | null;
   handleClose: () => void;
   open: boolean;
 }
@@ -30,7 +31,6 @@ const Search: React.FC<MegaMenuProps> = ({
   handleClose,
   open,
   id,
-  anchorElDashboard,
 }: MegaMenuProps) => {
   const defaultValues = {
     input: "",
@@ -48,41 +48,29 @@ const Search: React.FC<MegaMenuProps> = ({
   };
   const onChangeFirst = (value: string) => setTextInput(value);
   return (
-    <Popover
-      id={id}
+    <Dialog
       open={open}
-      anchorEl={anchorElDashboard}
+      TransitionComponent={TransitionDialog}
+      keepMounted
       onClose={handleClose}
-      anchorOrigin={{
-        vertical: "center",
-        horizontal: "left",
-      }}
-      transformOrigin={{
-        vertical: "center",
-        horizontal: "left",
-      }}
-      sx={{
-        ".MuiBackdrop-invisible": {
-          backdropFilter: "blur(2px)",
-          backgroundColor: "rgba(0, 0, 0, 0.001)",
-          borderRadius: "1rem",
-        },
-      }}
-      className="header__menuGroup__search__searchPopover"
+      aria-describedby="alert-dialog-slide-description"
+      className="header__menuGroup__search__searchDialog"
       PaperProps={{ className: "header__menuGroup__search__searchPaper" }}
     >
       <Box className="header__menuGroup__search__inputContainer">
         <Paper
           component="form"
           sx={{
-            p: "2px 4px",
             display: "flex",
             alignItems: "center",
           }}
           elevation={0}
           className="header__menuGroup__search__inputPaper"
         >
-          <IconButton sx={{ p: "10px" }} aria-label="menu">
+          <IconButton
+            aria-label="menu"
+            className="header__menuGroup__search__inputSearchIcon"
+          >
             <SearchIcon />
           </IconButton>
           <Controller
@@ -122,7 +110,7 @@ const Search: React.FC<MegaMenuProps> = ({
       {/* </Box>
         </Box> */}
       {/* </Box> */}
-    </Popover>
+    </Dialog>
   );
 };
 

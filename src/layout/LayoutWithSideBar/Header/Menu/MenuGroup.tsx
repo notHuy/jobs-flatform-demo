@@ -9,8 +9,7 @@ import Dashboard from "./Dashboard";
 import { Box, Stack, Divider, Button, IconButton } from "src/components";
 
 const MenuGroup: React.FC = () => {
-  const [anchorElSearch, setAnchorElSearch] =
-    useState<HTMLButtonElement | null>(null);
+  const [openSearch, setOpenSearch] = useState(false);
 
   const [anchorElMegaMenu, setAnchorElMegaMenu] =
     useState<HTMLButtonElement | null>(null);
@@ -18,8 +17,8 @@ const MenuGroup: React.FC = () => {
   const [anchorElDashBoard, setAnchorElDashboard] =
     useState<HTMLButtonElement | null>(null);
 
-  const handleClickSearch = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorElSearch(event.currentTarget);
+  const handleClickOpenSearch = () => {
+    setOpenSearch(true);
   };
   const handleClickMegaMenu = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorElMegaMenu(event.currentTarget);
@@ -29,7 +28,7 @@ const MenuGroup: React.FC = () => {
   };
 
   const handleCloseSearch = () => {
-    setAnchorElSearch(null);
+    setOpenSearch(false);
   };
   const handleCloseMegaMenu = () => {
     setAnchorElMegaMenu(null);
@@ -38,7 +37,6 @@ const MenuGroup: React.FC = () => {
     setAnchorElDashboard(null);
   };
 
-  const openSearch = Boolean(anchorElSearch);
   const openMegaMenu = Boolean(anchorElMegaMenu);
   const openDashboard = Boolean(anchorElDashBoard);
 
@@ -48,17 +46,12 @@ const MenuGroup: React.FC = () => {
   return (
     <Stack direction="row" className="header__menuGroup">
       <IconButton
-        onClick={handleClickSearch}
+        onClick={handleClickOpenSearch}
         className="header__menuGroup__searchButtonButton"
       >
         <SearchIcon className="header__menuGroup__searchButtonIcon" />
       </IconButton>
-      <Search
-        id={id}
-        handleClose={handleCloseSearch}
-        open={openSearch}
-        anchorElDashboard={anchorElSearch}
-      />
+      <Search id={id} handleClose={handleCloseSearch} open={openSearch} />
       <Divider
         orientation="vertical"
         flexItem

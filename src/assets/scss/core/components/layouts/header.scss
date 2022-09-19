@@ -218,16 +218,23 @@
 }
 
 //Search
-.header__menuGroup__search__searchPopover {
+.header__menuGroup__search__searchDialog {
   max-height: calc(100vh - 64px);
+  .MuiDialog-container {
+    height: auto;
+  }
   .header__menuGroup__search__searchPaper {
     max-width: 600px;
     width: calc(100% - 64px);
     border-radius: 10px;
     .header__menuGroup__search__inputContainer {
       .header__menuGroup__search__inputPaper {
+        .header__menuGroup__search__inputSearchIcon {
+          margin-left: 18px;
+          padding: 0px;
+        }
         .header__menuGroup__search__inputBase {
-          padding: 1rem;
+          padding: 18px;
         }
         .header__menuGroup__search__inputEscBtn {
           padding: 4.5px 9px;
@@ -268,7 +275,7 @@
 }
 
 .header__menuGroup__search__resultGroup {
-  padding: 9px 18px;
+  padding: 9px 0px;
   .header__menuGroup__search__resultTitle {
     font-weight: bold;
     padding: 9px 0px;
@@ -312,7 +319,7 @@
 .header__menuGroup__search__searchStartMenuText {
   display: flex;
   align-items: center;
-  margin: 18px !important;
+  margin: 18px 18px 0px !important;
   padding: 9px;
   color: rgb(51, 194, 255);
   background-color: rgba(51, 194, 255, 0.1);
@@ -321,7 +328,7 @@
   font-weight: 400;
   line-height: 1.75;
   border-radius: 10px;
-  font-size: 14px !important;
+  font-size: 0.8125rem !important;
   .header__menuGroup__search__searchStartMenuTextIcon {
     width: 18px;
     height: 18px;
@@ -330,7 +337,6 @@
 }
 .header__menuGroup__search__resultStartMenu {
   display: block;
-  margin: 0px 18px 18px;
   height: 450px;
 }
 

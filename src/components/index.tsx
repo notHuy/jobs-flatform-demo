@@ -18,6 +18,9 @@ import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
@@ -43,6 +46,7 @@ import ButtonBase from "@mui/material/ButtonBase";
 import Drawer from "@mui/material/Drawer";
 import InputBase from "@mui/material/InputBase";
 import Badge from "@mui/material/Badge";
+import Slide from "@mui/material/Slide";
 import Tooltip from "@mui/material/Tooltip";
 import SvgIcon from "@mui/material/SvgIcon";
 import Tabs from "@mui/material/Tabs";
@@ -87,6 +91,9 @@ export {
   Dialog,
   DialogProps,
   DialogTitle,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
   List,
   ListItem,
   ListItemAvatar,
@@ -108,6 +115,7 @@ export {
   InputBase,
   Tooltip,
   SvgIcon,
+  Slide,
   Tabs,
   Tab,
   Timeline,
