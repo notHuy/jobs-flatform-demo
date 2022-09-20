@@ -1,6 +1,7 @@
-import { useNavigate } from "react-router-dom";
-
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { styled } from "@mui/material/styles";
+
 import { authSliceActions } from "src/slices/auth";
 import { useAppDispatch } from "src/types/redux";
 import {
@@ -16,11 +17,7 @@ import {
   Divider,
   ListItemText,
 } from "src/components";
-import {
-  UnfoldMoreIcon,
-  ExitToAppIcon,
-  LockOpenTwoToneIcon,
-} from "src/components/Icon";
+import { UnfoldMoreIcon, LockOpenTwoToneIcon } from "src/components/Icon";
 import CustomIcon from "src/components/CustomIcon";
 import { popupSideBar } from "src/data/data";
 
@@ -104,7 +101,7 @@ const AvatarGroup: React.FC = () => {
               </Typography>
             </Box>
           </Box>
-          <Divider />
+          <Divider light />
           <List className="sidebar__AvatarGroup__customButtonList">
             {popupSideBar.map((item) => (
               <ListItemButton className="sidebar__AvatarGroup__customButton">
@@ -118,7 +115,7 @@ const AvatarGroup: React.FC = () => {
               </ListItemButton>
             ))}
           </List>
-          <Divider />
+          <Divider light />
           <Button
             variant="text"
             startIcon={<LockOpenTwoToneIcon />}
