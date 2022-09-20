@@ -78,8 +78,8 @@ const SearchHeaderBar: React.FC = () => {
           multiple
           id="tags-outlined"
           options={jobTags}
+          defaultValue={[jobTags[4]]}
           getOptionLabel={(option) => option.tagName}
-          // defaultValue={[jobTags[1]]}
           filterSelectedOptions
           componentsProps={{
             popper: {

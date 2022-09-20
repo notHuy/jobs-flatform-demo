@@ -5,5 +5,9 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 2rem;
+    .MuiTypography-root {
+      font-size: 14px;
+      color: rgba(34, 51, 84, 0.7);
+    }
   }
 }
