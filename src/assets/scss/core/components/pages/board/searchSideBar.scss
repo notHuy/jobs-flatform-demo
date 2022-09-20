@@ -21,13 +21,12 @@
 }
 
 .board__searchSideBarAccordionGroup__accordion {
-  padding: 1rem;
+  padding: 9px;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none !important;
   .board__searchSideBarAccordionGroup__accordionSummary {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 0 18px;
     .board__searchSideBarAccordionGroup__accordionTitle {
       color: rgb(34, 51, 84);
       font-weight: bold;
@@ -38,6 +37,9 @@
         Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
       line-height: 1.334;
     }
+    .MuiAccordionSummary-expandIconWrapper {
+      color: rgb(34, 51, 84);
+    }
   }
 }
 
@@ -47,8 +49,16 @@
   border-radius: 5px !important;
   align-items: center;
   color: rgb(34, 51, 84);
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
+  padding: 0px 18px !important;
+  .MuiListItemIcon-root {
+    color: rgb(34, 51, 84);
+    flex-shrink: 0;
+    display: inline-flex;
+    min-width: 32px;
+    .MuiCheckbox-root {
+      margin: 0 0 0 -12px;
+    }
+  }
   &:hover {
     background-color: rgb(229, 232, 255) !important;
   }

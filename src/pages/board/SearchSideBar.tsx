@@ -12,6 +12,7 @@ import {
   Typography,
   Checkbox,
   List,
+  ListItemIcon,
 } from "src/components";
 import { ExpandMoreIcon } from "src/components/Icon";
 import {
@@ -34,7 +35,7 @@ type TypeCategory = {
 
 const data: TypeCategory[] = [
   {
-    accordionTitle: "Type of employments",
+    accordionTitle: "Type of Employment",
     type: "type",
     types: [
       {
@@ -211,14 +212,16 @@ const SearchSideBar: React.FC<SearchSideBarProps> = ({ className }) => {
                       ?.click();
                   }}
                 >
-                  <CheckBoxWrapper
-                    checked={filters[category.type as TypeFilter].includes(
-                      item.id
-                    )}
-                    onClick={handleCheckboxChange}
-                    id={`${category.type}_${item.id}`}
-                    inputProps={{ "aria-label": "controlled" }}
-                  />
+                  <ListItemIcon>
+                    <CheckBoxWrapper
+                      checked={filters[category.type as TypeFilter].includes(
+                        item.id
+                      )}
+                      onClick={handleCheckboxChange}
+                      id={`${category.type}_${item.id}`}
+                      inputProps={{ "aria-label": "controlled" }}
+                    />
+                  </ListItemIcon>
                   <Typography className="board__searchSideBar__itemName">
                     {item.name}
                   </Typography>
