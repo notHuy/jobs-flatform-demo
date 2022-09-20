@@ -78,7 +78,7 @@ const SearchHeaderBar: React.FC = () => {
           multiple
           id="tags-outlined"
           options={jobTags}
-          defaultValue={[jobTags[4]]}
+          defaultValue={[jobTags[4], jobTags[8]]}
           getOptionLabel={(option) => option.tagName}
           filterSelectedOptions
           componentsProps={{
@@ -88,7 +88,11 @@ const SearchHeaderBar: React.FC = () => {
           }}
           onChange={handleSearchJobTagsChange}
           renderInput={(params) => (
-            <TextField {...params} label="Job Tags" placeholder="Job" />
+            <TextField
+              {...params}
+              label="Job Tags"
+              placeholder="Select tags..."
+            />
           )}
         />
         <Divider
@@ -102,7 +106,7 @@ const SearchHeaderBar: React.FC = () => {
           id="tags-outlined"
           options={locationTags}
           getOptionLabel={(option) => option.tagName}
-          // defaultValue={[locationTags[1]]}
+          defaultValue={[locationTags[1], locationTags[2]]}
           filterSelectedOptions
           componentsProps={{
             popper: {
@@ -114,7 +118,7 @@ const SearchHeaderBar: React.FC = () => {
             <TextField
               {...params}
               label="Location tags"
-              placeholder="Location"
+              placeholder="Select location..."
             />
           )}
         />
