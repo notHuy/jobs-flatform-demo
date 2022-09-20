@@ -16,7 +16,11 @@ import {
   Divider,
   ListItemText,
 } from "src/components";
-import { UnfoldMoreIcon, ExitToAppIcon } from "src/components/Icon";
+import {
+  UnfoldMoreIcon,
+  ExitToAppIcon,
+  LockOpenTwoToneIcon,
+} from "src/components/Icon";
 import CustomIcon from "src/components/CustomIcon";
 import { popupSideBar } from "src/data/data";
 
@@ -91,7 +95,7 @@ const AvatarGroup: React.FC = () => {
               className="sidebar__AvatarGroup__PopupAvatar"
               src="https://tokyo.bloomui.com/static/images/avatars/3.jpg"
             ></Avatar>
-            <Box ml={2}>
+            <Box ml={1.3}>
               <Typography className="sidebar__AvatarGroup__PopupMainName">
                 Randy Smith
               </Typography>
@@ -117,11 +121,11 @@ const AvatarGroup: React.FC = () => {
           <Divider />
           <Button
             variant="text"
-            startIcon={<ExitToAppIcon />}
+            startIcon={<LockOpenTwoToneIcon />}
             onClick={logoutHandler}
             className="sidebar__AvatarGroup_logoutButton"
           >
-            Log out
+            Sign out
           </Button>
         </Popover>
       </Box>

@@ -679,19 +679,19 @@ export const popupSideBar = [
   {
     id: "1",
     name: "Profile",
-    icon: "AccountBox",
+    icon: "AccountBoxTwoTone",
     color: "rgb(85, 105, 255)",
   },
   {
     id: "2",
     name: "Inbox",
-    icon: "Inbox",
+    icon: "InboxTwoTone",
     color: "rgb(85, 105, 255)",
   },
   {
     id: "3",
     name: "Projects",
-    icon: "Schema",
+    icon: "AccountTreeTwoTone",
     color: "rgb(85, 105, 255)",
   },
 ];

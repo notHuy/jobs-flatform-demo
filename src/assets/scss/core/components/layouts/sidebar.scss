@@ -128,25 +128,33 @@
 
 .sidebar__AvatarGroup__customButtonList {
   &.MuiList-root {
-    padding: 0.5rem;
+    padding: 9px;
   }
   .sidebar__AvatarGroup__customButton {
     color: rgb(110, 117, 159);
     border-radius: 6px !important;
     margin: 1px 0px;
+    max-height: 37px;
     .MuiListItemIcon-root {
-      min-width: 2rem;
-      font-size: 0.2rem;
+      min-width: 1.8rem;
+      font-size: 0.1rem !important;
+      color: rgb(110, 117, 159);
     }
     .MuiListItemText-root {
-      font-size: 0.2rem;
+      .MuiTypography-root {
+        font-size: 14px !important;
+      }
     }
 
     .sidebar__AvatarGroup_icon {
-      color: rgb(110, 117, 159);
+      width: 20px;
+      height: 20px;
     }
     &:hover {
-      background-color: rgba(0, 0, 0, 0.04);
+      color: rgb(34, 51, 84);
+      background: rgb(242, 243, 255);
+    }
+    &:hover .MuiListItemIcon-root {
       color: rgb(34, 51, 84);
     }
   }
