@@ -24,11 +24,15 @@
     }
     .jobboard__item__contentCompany {
       color: rgba(34, 51, 84, 0.7);
-      font-size: 0.9rem;
+      font-weight: 500;
+      line-height: 1.6;
+      font-size: 15px;
     }
     .jobboard__item__contentLocation {
       color: rgba(34, 51, 84, 0.7);
-      font-size: 0.9rem;
+      font-weight: 500;
+      line-height: 1.6;
+      font-size: 14px;
     }
   }
   .jobboard__item__tags {
@@ -36,8 +40,14 @@
     .jobboard__item__tagsLabel {
       margin-right: 0.5rem;
       padding: 9px;
+      &.MuiChip-root {
+        color: rgb(34, 51, 84);
+        line-height: 28px;
+        background-color: rgba(34, 51, 84, 0.1);
+      }
       .MuiChip-label {
-        font-weight: bold;
+        font-weight: 700;
+        color: rgb(34, 51, 84);
       }
     }
   }
