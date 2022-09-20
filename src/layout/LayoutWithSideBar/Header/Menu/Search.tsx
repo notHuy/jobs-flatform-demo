@@ -46,10 +46,13 @@ const Search: React.FC<MegaMenuProps> = ({
     console.log(data);
   };
   const onChangeFirst = (value: string) => {
-    setIsLoading(true);
+    if (value.length !== 0) {
+      setIsLoading(true);
+    }
+
     setTimeout(() => {
       setIsLoading(false);
-    }, 3000);
+    }, 2000);
     setTextInput(value);
   };
   const renderSearchMenu = () => {
