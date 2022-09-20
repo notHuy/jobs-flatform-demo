@@ -38,6 +38,8 @@ import CloseTwoToneIcon from "@mui/icons-material/CloseTwoTone";
 import DashboardTwoToneIcon from "@mui/icons-material/DashboardTwoTone";
 import ArrowForwardTwoToneIcon from "@mui/icons-material/ArrowForwardTwoTone";
 import LockOpenTwoToneIcon from "@mui/icons-material/LockOpenTwoTone";
+import ThumbUpTwoToneIcon from "@mui/icons-material/ThumbUpTwoTone";
+import ThumbDownTwoToneIcon from "@mui/icons-material/ThumbDownTwoTone";
 
 export {
   DeleteIcon,
@@ -80,4 +82,6 @@ export {
   CloseTwoToneIcon,
   DashboardTwoToneIcon,
   LockOpenTwoToneIcon,
+  ThumbUpTwoToneIcon,
+  ThumbDownTwoToneIcon,
 };

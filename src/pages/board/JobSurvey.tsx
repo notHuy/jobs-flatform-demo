@@ -2,7 +2,7 @@ import React from "react";
 import { styled } from "@mui/material/styles";
 
 import { Grid, Paper, Typography, IconButton, Box } from "src/components";
-import { ThumbUpOffAltIcon, ThumbDownOffAltIcon } from "src/components/Icon";
+import { ThumbUpTwoToneIcon, ThumbDownTwoToneIcon } from "src/components/Icon";
 
 const PaperWrapper = styled(Paper)(
   () => `
@@ -39,13 +39,13 @@ const JobSurvey: React.FC = () => {
             aria-label="thumbup"
             className="board__survey__iconButton"
           >
-            <ThumbUpOffAltIcon sx={{ fontSize: 40 }} />
+            <ThumbUpTwoToneIcon sx={{ fontSize: 40 }} />
           </IconButton>
           <IconButton
             aria-label="thumbdown"
             className="board__survey__iconButton"
           >
-            <ThumbDownOffAltIcon sx={{ fontSize: 40 }} />
+            <ThumbDownTwoToneIcon sx={{ fontSize: 40 }} />
           </IconButton>
         </Box>
         <Typography className="board__survey__footer">
