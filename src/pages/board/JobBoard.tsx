@@ -85,7 +85,7 @@ const JobBoard: React.FC = () => {
                     <MoreVertIcon fontSize="small" />
                   </IconButton>
                 </Box>
-                <Box pl={3} pr={3} className="jobboard__item__content">
+                <Box className="jobboard__item__content">
                   <Typography
                     variant="h6"
                     className="jobboard__item__contentTitle"
@@ -120,7 +120,7 @@ const JobBoard: React.FC = () => {
                   />
                 </Box>
                 <Divider variant="fullWidth" />
-                <Box p={3} className="jobboard__item__buttonGroup">
+                <Box className="jobboard__item__buttonGroup">
                   <Button
                     variant="contained"
                     className="jobboard__item__button jobboard__item__buttonFilled "

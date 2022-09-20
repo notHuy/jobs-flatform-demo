@@ -7,6 +7,7 @@
   .jobboard__item__head {
     display: flex;
     justify-content: space-between;
+    padding: 27px;
     .jobboard__item__headIcon {
       display: inline-flex;
       align-items: flex-start;
@@ -14,9 +15,12 @@
     }
   }
   .jobboard__item__content {
+    padding: 0 27px;
     .jobboard__item__contentTitle {
       font-weight: bold;
-      font-size: 1.1rem;
+      font-size: 16px;
+      line-height: 1.235;
+      margin: 0px 0px 9px;
     }
     .jobboard__item__contentCompany {
       color: rgba(34, 51, 84, 0.7);
@@ -28,7 +32,7 @@
     }
   }
   .jobboard__item__tags {
-    padding: 9px 18px;
+    padding: 9px 18px 14px;
     .jobboard__item__tagsLabel {
       margin-right: 0.5rem;
       padding: 9px;
@@ -40,6 +44,7 @@
   .jobboard__item__buttonGroup {
     display: flex;
     gap: 1rem;
+    padding: 18px 27px;
     .jobboard__item__button {
       width: 90%;
       border-radius: 1rem;
