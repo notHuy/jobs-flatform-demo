@@ -17,3 +17,50 @@
     }
   }
 }
+
+.board__sortBar__popOver {
+  border-radius: 10px;
+  .board__sortBar__popOverPaper {
+    border-radius: 10px;
+    .board__sortBar {
+      max-width: 240px;
+      .board__sortBar__tittle {
+        padding: 18px 18px 0;
+        font-size: 14px;
+        font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+        line-height: 1.43;
+        font-weight: 700;
+        color: rgb(110, 117, 159);
+      }
+    }
+  }
+}
+
+.board__sortBar__menuList {
+  padding: 12px !important;
+  .board__sortBar__menuItem {
+    padding: 6px 16px;
+    border-radius: 5px;
+    margin-bottom: 1px;
+    display: flex;
+    color: rgba(34, 51, 84, 0.7);
+    font-size: 14px;
+    &:hover {
+      color: rgb(34, 51, 84);
+      background-color: rgba(229, 232, 255, 0.4);
+    }
+    .board__sortBar__menuItem__icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1.5rem;
+    }
+    .board__sortBar__menuItem__title {
+      font-size: 14px !important;
+    }
+  }
+  .board__sortBar__menuItemGreyActive {
+    background-color: rgba(34, 51, 84, 0.1);
+  }
+}

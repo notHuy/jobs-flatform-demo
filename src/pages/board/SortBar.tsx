@@ -82,22 +82,22 @@ const SortBar: React.FC = () => {
           },
         }}
         disableScrollLock
-        className="header__iconGroup__lang__popOver"
-        PaperProps={{ className: "header__iconGroup__lang__popOverPaper" }}
+        className="board__sortBar__popOver"
+        PaperProps={{ className: "board__sortBar__popOverPaper" }}
       >
-        <Box className="header__iconGroup__lang">
-          <MenuList className="header__iconGroup__lang__menuList">
+        <Box className="board__sortBar">
+          <MenuList className="board__sortBar__menuList">
             {sortBarMode.map((item, index) => (
               <MenuItem
-                className={`header__iconGroup__lang__menuItem header__iconGroup__lang__menuItemGrey ${
+                className={`board__sortBar__menuItem board__sortBar__menuItemGrey ${
                   selectedMode === item.id
-                    ? "header__iconGroup__lang__menuItemGreyActive"
+                    ? "board__sortBar__menuItemGreyActive"
                     : ""
                 } `}
                 key={item.id}
                 onClick={handleClickItem(item.id)}
               >
-                <ListItemText>{item.name}</ListItemText>
+                {item.name}
               </MenuItem>
             ))}
           </MenuList>
